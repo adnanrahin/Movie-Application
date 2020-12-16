@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring-Boot-Web-Application</title>
+</head>
+<body>
+
+<h1>Book List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Last Update</th>
+    </tr>
+    <tr th:each="actor : ${actors}">
+        <td th:text="${actor.id}"></td>
+        <td th:text="${actor.firstName}"></td>
+        <td th:text="${actor.lastName}"></td>
+        <td th:text="${actor.lastUpdate}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
