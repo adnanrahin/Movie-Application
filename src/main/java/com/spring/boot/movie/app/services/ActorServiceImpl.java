@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ActorServiceImpl implements ActorService {
+public class ActorServiceImpl implements CrudService<Actor, Long> {
 
-    private ActorRepository actorRepository;
+    private final ActorRepository actorRepository;
 
     @Autowired
     public ActorServiceImpl(ActorRepository actorRepository) {
@@ -20,5 +20,25 @@ public class ActorServiceImpl implements ActorService {
     @Override
     public List<Actor> findAll() {
         return (List<Actor>) actorRepository.findAll();
+    }
+
+    @Override
+    public Actor findById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public Actor save(Actor object) {
+        return null;
+    }
+
+    @Override
+    public void delete(Actor object) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
     }
 }
