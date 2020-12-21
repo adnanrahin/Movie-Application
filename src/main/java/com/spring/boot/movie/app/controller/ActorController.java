@@ -1,6 +1,5 @@
 package com.spring.boot.movie.app.controller;
 
-import com.spring.boot.movie.app.model.Actor;
 import com.spring.boot.movie.app.services.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
