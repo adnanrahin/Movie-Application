@@ -1,7 +1,6 @@
 package com.spring.boot.movie.app.controller;
 
-import com.spring.boot.movie.app.model.Customer;
-import com.spring.boot.movie.app.services.CrudService;
+import com.spring.boot.movie.app.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class CustomerController {
 
-    private final CrudService<Customer, Long> crudService;
+    private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CrudService<Customer, Long> crudService) {
-        this.crudService = crudService;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
     @RequestMapping(value = {"", "/", "/index", "/index.html"}, method = RequestMethod.GET)
     public String getListOfCustomer(Model model) {
 
-        model.addAttribute("customers", crudService.findAll());
+        model.addAttribute("customers", customerService.findAll());
 
         return "customers/index";
     }

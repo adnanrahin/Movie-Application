@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ActorServiceImpl implements CrudService<Actor, Long> {
+public class ActorServiceImpl implements ActorService {
 
     private final ActorRepository actorRepository;
 
