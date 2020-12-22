@@ -23,8 +23,16 @@ public class ActorServiceImpl implements ActorService {
     }
 
     @Override
-    public Actor findById(Long aLong) {
-        return null;
+    public Actor findById(Long id) {
+
+        List<Actor> actors = (List<Actor>) actorRepository.findAll();
+
+        for (Actor actor : actors) {
+            if (actor.getId().equals(id)) {
+                return actor;
+            }
+        }
+        throw new RuntimeException("Actor Does Not Exist");
     }
 
     @Override
