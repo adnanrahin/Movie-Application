@@ -1,8 +1,10 @@
 package com.spring.boot.movie.app.model;
 
-import org.locationtech.jts.geom.Geometry;
+import org.geolatte.geom.Geometry;
 
 import javax.persistence.*;
+import java.sql.Blob;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "address")
@@ -18,14 +20,14 @@ public class Address {
     private String address;
 
     @Basic
-    @Column(name = "address2", nullable = true, length = 50)
+    @Column(name = "address2", length = 50)
     private String address2;
 
     @Basic
     @Column(name = "district", nullable = false, length = 20)
     private String district;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
@@ -38,8 +40,13 @@ public class Address {
     private String phone;
 
     @Basic
+    @Lob
     @Column(name = "location", columnDefinition = "Geometry")
-    private Geometry location;
+    private Blob location;
+
+    @Basic
+    @Column(name = "last_update")
+    private Timestamp lastUpdate;
 
     public Address() {
 
@@ -93,6 +100,14 @@ public class Address {
         this.postalCode = postalCode;
     }
 
+    public Blob getLocation() {
+        return location;
+    }
+
+    public void setLocation(Blob location) {
+        this.location = location;
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -101,11 +116,11 @@ public class Address {
         this.phone = phone;
     }
 
-    public Geometry getLocation() {
-        return location;
+    public Timestamp getLastUpdate() {
+        return lastUpdate;
     }
 
-    public void setLocation(Geometry location) {
-        this.location = location;
+    public void setLastUpdate(Timestamp lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 }
