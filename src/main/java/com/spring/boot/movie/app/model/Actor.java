@@ -11,7 +11,7 @@ public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "actor_id")
-    private Long actorId;
+    private Long id;
 
     @Basic
     @Column(name = "first_name")
@@ -25,12 +25,12 @@ public class Actor {
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
-    public Long getActorId() {
-        return actorId;
+    public Long getId() {
+        return id;
     }
 
-    public void setActorId(Long id) {
-        this.actorId = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -62,7 +62,7 @@ public class Actor {
         if (this == o) return true;
         if (!(o instanceof Actor)) return false;
         Actor actor = (Actor) o;
-        return actorId.equals(actor.actorId) &&
+        return id.equals(actor.id) &&
                 firstName.equals(actor.firstName) &&
                 lastName.equals(actor.lastName) &&
                 lastUpdate.equals(actor.lastUpdate);
@@ -70,13 +70,13 @@ public class Actor {
 
     @Override
     public int hashCode() {
-        return Objects.hash(actorId, firstName, lastName, lastUpdate);
+        return Objects.hash(id, firstName, lastName, lastUpdate);
     }
 
     @Override
     public String toString() {
         return "Actor{" +
-                "id=" + actorId +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", lastUpdate=" + lastUpdate +

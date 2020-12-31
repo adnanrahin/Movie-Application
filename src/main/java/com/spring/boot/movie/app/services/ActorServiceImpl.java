@@ -28,7 +28,7 @@ public class ActorServiceImpl implements ActorService {
         List<Actor> actors = (List<Actor>) actorRepository.findAll();
 
         for (Actor actor : actors) {
-            if (actor.getActorId().equals(id)) {
+            if (actor.getId().equals(id)) {
                 return actor;
             }
         }
