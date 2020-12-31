@@ -21,7 +21,7 @@
         <th>Last Update</th>
     </tr>
     <tr th:each="customer : ${customers}">
-        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.customerId}"></td>
         <td th:text="${customer.firstName}"></td>
         <td th:text="${customer.lastName}"></td>
         <td th:text="${customer.email}"></td>

@@ -11,7 +11,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "customer_id")
-    private Long id;
+    private Long customerId;
 
     @Basic
     @Column(name = "store_id")
@@ -46,12 +46,12 @@ public class Customer {
     private Timestamp lastUpdate;
 
 
-    public Long getId() {
-        return id;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCustomerId(Long id) {
+        this.customerId = id;
     }
 
     public Integer getStoreId() {
@@ -121,7 +121,7 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
+                "id=" + customerId +
                 ", storeId=" + storeId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
