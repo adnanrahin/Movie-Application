@@ -56,6 +56,10 @@
             <artifactId>hibernate-spatial</artifactId>
             <version>5.4.27.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

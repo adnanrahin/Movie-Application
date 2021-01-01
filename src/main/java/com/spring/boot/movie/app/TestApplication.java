@@ -14,7 +14,7 @@ public class TestApplication {
 
         TestController controller = (TestController) context.getBean("testController");
 
-        controller.showCity();
+        controller.show();
 
     }
 
