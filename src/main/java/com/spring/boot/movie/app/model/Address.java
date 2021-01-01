@@ -1,7 +1,5 @@
 package com.spring.boot.movie.app.model;
 
-import org.geolatte.geom.Geometry;
-
 import javax.persistence.*;
 import java.sql.Blob;
 import java.sql.Timestamp;
@@ -27,7 +25,8 @@ public class Address {
     @Column(name = "district", nullable = false, length = 20)
     private String district;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
@@ -122,5 +121,19 @@ public class Address {
 
     public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressId=" + addressId +
+                ", address='" + address + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", district='" + district + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", phone='" + phone + '\'' +
+                ", location=" + location +
+                ", lastUpdate=" + lastUpdate +
+                '}';
     }
 }
