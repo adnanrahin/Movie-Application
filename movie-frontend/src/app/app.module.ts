@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {ActorListComponent} from './components/actor-list/actor-list.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ActorServiceService} from './services/actor-service.service';
+import {ActorService} from './services/actor.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import {ActorServiceService} from './services/actor-service.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [ActorServiceService],
+  providers: [ActorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

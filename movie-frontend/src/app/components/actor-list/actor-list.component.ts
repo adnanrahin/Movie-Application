@@ -1,4 +1,4 @@
-import { ActorServiceService } from './../../services/actor-service.service';
+import { ActorService } from '../../services/actor.service';
 import { Component, OnInit } from '@angular/core';
 import { Actor } from 'src/app/model/actor';
 
@@ -11,7 +11,7 @@ export class ActorListComponent implements OnInit {
 
   actorList: Actor[] = [];
 
-  constructor(private actorService: ActorServiceService) { }
+  constructor(private actorService: ActorService) { }
 
   ngOnInit(): void {
     this.actorService.findAll().subscribe(data => {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ActorServiceService {
+export class ActorService {
 
   private readonly actorUrl: string;
 
