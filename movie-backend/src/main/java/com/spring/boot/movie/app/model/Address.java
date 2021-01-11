@@ -123,17 +123,4 @@ public class Address {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public String toString() {
-        return "Address{" +
-                "addressId=" + addressId +
-                ", address='" + address + '\'' +
-                ", address2='" + address2 + '\'' +
-                ", district='" + district + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                ", phone='" + phone + '\'' +
-                ", location=" + location +
-                ", lastUpdate=" + lastUpdate +
-                '}';
-    }
 }
