@@ -1,7 +1,8 @@
-package com.spring.boot.movie.app.services;
+package com.spring.boot.movie.app.services.implementaions;
 
 import com.spring.boot.movie.app.model.Actor;
 import com.spring.boot.movie.app.repositories.ActorRepository;
+import com.spring.boot.movie.app.services.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
-package com.spring.boot.movie.app.services;
+package com.spring.boot.movie.app.services.implementaions;
 
 import com.spring.boot.movie.app.model.Customer;
 import com.spring.boot.movie.app.repositories.CustomerRepository;
+import com.spring.boot.movie.app.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+    @Autowired
     private final CustomerRepository customerRepository;
 
     @Autowired
@@ -23,22 +25,22 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer findById(Long aLong) {
-        return null;
+    public Customer findById(Long id) {
+        return customerRepository.findById(id).orElse(null);
     }
 
     @Override
     public Customer save(Customer object) {
-        return null;
+        return customerRepository.save(object);
     }
 
     @Override
     public void delete(Customer object) {
-
+        customerRepository.delete(object);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        customerRepository.deleteById(id);
     }
 }
