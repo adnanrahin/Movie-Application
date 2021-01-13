@@ -1,8 +1,5 @@
 package com.spring.boot.movie.app.model;
 
-import com.spring.boot.movie.app.model._enums.Rating;
-import com.spring.boot.movie.app.model._enums.SpecialFeatures;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -48,10 +45,10 @@ public class Film {
     private Double replacementCost;
 
     @Column(name = "rating")
-    private Rating rating;
+    private String rating;
 
     @Column(name = "special_features")
-    private SpecialFeatures specialFeatures;
+    private String specialFeatures;
 
     @Column(name = "last_update")
     private Timestamp timestamp;
@@ -136,19 +133,19 @@ public class Film {
         this.replacementCost = replacementCost;
     }
 
-    public Rating getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(Rating rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
-    public SpecialFeatures getSpecialFeatures() {
+    public String getSpecialFeatures() {
         return specialFeatures;
     }
 
-    public void setSpecialFeatures(SpecialFeatures specialFeatures) {
+    public void setSpecialFeatures(String specialFeatures) {
         this.specialFeatures = specialFeatures;
     }
 

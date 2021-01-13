@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/ActorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/ActorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/AddressServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/CityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/CityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/CountryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/CountryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/model/Film.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +58,10 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/movie-frontend/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
+  <component name="RunManager" selected="Spring Boot.MovieApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -120,7 +116,7 @@
       <workItem from="1610350960086" duration="270000" />
       <workItem from="1610422638642" duration="604000" />
       <workItem from="1610501982584" duration="6429000" />
-      <workItem from="1610565934203" duration="5311000" />
+      <workItem from="1610565934203" duration="7217000" />
     </task>
     <servers />
   </component>
