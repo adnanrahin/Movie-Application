@@ -1,5 +1,7 @@
 package com.spring.boot.movie.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -24,7 +26,8 @@ public class City {
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "city",
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "city",
     cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Address> addresses;
 
@@ -68,13 +71,4 @@ public class City {
         this.addresses = addresses;
     }
 
-    @Override
-    public String toString() {
-        return "City{" +
-                "cityId=" + cityId +
-                ", city='" + city + '\'' +
-                ", country=" + country +
-                ", lastUpdate=" + lastUpdate +
-                '}';
-    }
 }

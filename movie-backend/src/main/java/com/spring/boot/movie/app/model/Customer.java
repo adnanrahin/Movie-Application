@@ -118,18 +118,4 @@ public class Customer {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + customerId +
-                ", storeId=" + storeId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", addressId=" + addressId +
-                ", tinyInt=" + active +
-                ", dateTime=" + createDate +
-                ", lastUpdate=" + lastUpdate +
-                '}';
-    }
 }

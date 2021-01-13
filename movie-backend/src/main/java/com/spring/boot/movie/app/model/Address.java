@@ -1,7 +1,6 @@
 package com.spring.boot.movie.app.model;
 
 import javax.persistence.*;
-import java.sql.Blob;
 import java.sql.Timestamp;
 
 @Entity
@@ -13,37 +12,26 @@ public class Address {
     @Column(name = "address_id", nullable = false)
     private Long addressId;
 
-    @Basic
     @Column(name = "address", nullable = false, length = 50)
     private String address;
 
-    @Basic
     @Column(name = "address2", length = 50)
     private String address2;
 
-    @Basic
     @Column(name = "district", nullable = false, length = 20)
     private String district;
 
-    @ManyToOne(fetch = FetchType.LAZY,
+    @ManyToOne(fetch = FetchType.EAGER,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
-    @Basic
     @Column(name = "postal_code", nullable = false, length = 10)
     private String postalCode;
 
-    @Basic
     @Column(name = "phone", nullable = false, length = 20)
     private String phone;
 
-    @Basic
-    @Lob
-    @Column(name = "location", columnDefinition = "Geometry")
-    private Blob location;
-
-    @Basic
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
@@ -97,14 +85,6 @@ public class Address {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
-    }
-
-    public Blob getLocation() {
-        return location;
-    }
-
-    public void setLocation(Blob location) {
-        this.location = location;
     }
 
     public String getPhone() {

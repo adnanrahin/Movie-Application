@@ -45,13 +45,4 @@ public class Category {
     public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "categoryId=" + categoryId +
-                ", name='" + name + '\'' +
-                ", lastUpdate=" + lastUpdate +
-                '}';
-    }
 }
