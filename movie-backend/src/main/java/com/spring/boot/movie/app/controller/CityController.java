@@ -5,12 +5,14 @@ import com.spring.boot.movie.app.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api")
 public class CityController {
 
     private final CityService cityService;
@@ -21,7 +23,7 @@ public class CityController {
     }
 
     @GetMapping("/cities")
-    public List<City> mapCities() {
+    public List<City> getAllCity() {
         return (List<City>) cityService.findAll();
     }
 
