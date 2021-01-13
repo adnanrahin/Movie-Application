@@ -57,29 +57,4 @@ public class Actor {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Actor)) return false;
-        Actor actor = (Actor) o;
-        return actorId.equals(actor.actorId) &&
-                firstName.equals(actor.firstName) &&
-                lastName.equals(actor.lastName) &&
-                lastUpdate.equals(actor.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(actorId, firstName, lastName, lastUpdate);
-    }
-
-    @Override
-    public String toString() {
-        return "Actor{" +
-                "id=" + actorId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", lastUpdate=" + lastUpdate +
-                '}';
-    }
 }
