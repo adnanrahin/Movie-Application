@@ -2,26 +2,22 @@ package com.spring.boot.movie.app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Table(name = "actor", schema = "sakila")
 public class Actor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "actor_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "actor_id", unique = true, nullable = false)
     private Long actorId;
 
-    @Basic
     @Column(name = "first_name")
     private String firstName;
 
-    @Basic
     @Column(name = "last_name")
     private String lastName;
 
-    @Basic
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 

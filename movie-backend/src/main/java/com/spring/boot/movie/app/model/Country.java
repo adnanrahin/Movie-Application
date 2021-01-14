@@ -12,6 +12,7 @@ public class Country {
 
     @Id
     @Column(name = "country_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long countryId;
 
     @Column(name = "country")
