@@ -38,16 +38,16 @@ public class ActorServiceImpl implements ActorService {
 
     @Override
     public Actor save(Actor object) {
-        return null;
+        return actorRepository.save(object);
     }
 
     @Override
     public void delete(Actor object) {
-
+        actorRepository.delete(object);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        actorRepository.deleteById(id);
     }
 }

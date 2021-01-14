@@ -3,16 +3,13 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Actor;
 import com.spring.boot.movie.app.services.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/api")
+@RequestMapping("/api/actor")
 public class ActorController {
 
     private final ActorService actorService;
@@ -22,8 +19,13 @@ public class ActorController {
         this.actorService = actorService;
     }
 
-    @GetMapping("/actors")
+    @GetMapping("/getAllActor")
     public List<Actor> getAllActor() {
         return (List<Actor>) actorService.findAll();
+    }
+
+    @PostMapping("/save")
+    public void saveActor(@RequestBody Actor object) {
+        actorService.save(object);
     }
 }
