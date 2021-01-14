@@ -13,9 +13,11 @@ public class Customer {
     @Column(name = "customer_id")
     private Long customerId;
 
-    @Basic
-    @Column(name = "store_id")
-    private Integer storeId;
+
+    @ManyToOne(fetch = FetchType.EAGER,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "store_id", nullable = false)
+    private Store store;
 
     @Basic
     @Column(name = "first_name")
@@ -54,12 +56,12 @@ public class Customer {
         this.customerId = id;
     }
 
-    public Integer getStoreId() {
-        return storeId;
+    public Store getStoreId() {
+        return store;
     }
 
-    public void setStoreId(Integer storeId) {
-        this.storeId = storeId;
+    public void setStoreId(Store store) {
+        this.store = store;
     }
 
     public String getFirstName() {

@@ -1,5 +1,7 @@
 package com.spring.boot.movie.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -34,6 +36,14 @@ public class Address {
 
     @Column(name = "last_update")
     private Timestamp lastUpdate;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "address")
+    private Staff staff;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "address")
+    private Store store;
 
     public Address() {
 
@@ -103,4 +113,19 @@ public class Address {
         this.lastUpdate = lastUpdate;
     }
 
+    public Staff getStaff() {
+        return staff;
+    }
+
+    public void setStaff(Staff staff) {
+        this.staff = staff;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
 }

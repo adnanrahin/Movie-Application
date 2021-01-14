@@ -12,7 +12,7 @@ export class ActorService {
   private readonly actorUrl: string;
 
   constructor(private http: HttpClient) {
-    this.actorUrl = 'http://localhost:8080/actor';
+    this.actorUrl = 'http://localhost:8080/api/actors';
    }
 
    public findAll(): Observable<Actor[]> {
