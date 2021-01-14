@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api")
+@RestController
 @CrossOrigin(origins = "http//:localhost:4200")
-@RequestMapping("/film")
+@RequestMapping("/api/film")
 public class FilmController {
 
     private final FilmService filmService;
