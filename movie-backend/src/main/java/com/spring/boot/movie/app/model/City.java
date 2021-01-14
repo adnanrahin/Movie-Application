@@ -10,8 +10,12 @@ import java.util.List;
 @Table(name = "city")
 public class City {
 
+    public City(){
+
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "city_id", nullable = false)
     private Long cityId;
 

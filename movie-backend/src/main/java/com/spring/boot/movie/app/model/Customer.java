@@ -8,11 +8,14 @@ import java.time.LocalDateTime;
 @Table(name = "customer", schema = "sakila")
 public class Customer {
 
+    public Customer() {
+
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long customerId;
-
 
     @ManyToOne(fetch = FetchType.EAGER,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
@@ -46,7 +49,6 @@ public class Customer {
     @Basic
     @Column(name = "last_update")
     private Timestamp lastUpdate;
-
 
     public Long getCustomerId() {
         return customerId;

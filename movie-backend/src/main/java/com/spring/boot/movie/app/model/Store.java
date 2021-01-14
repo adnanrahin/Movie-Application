@@ -10,8 +10,12 @@ import java.util.Set;
 @Table(name = "store")
 public class Store {
 
+    public Store() {
+
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "store_id")
     private Long storeId;
 

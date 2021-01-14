@@ -10,9 +10,13 @@ import java.util.List;
 @Table(name = "country")
 public class Country {
 
+    public Country(){
+
+    }
+
     @Id
     @Column(name = "country_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long countryId;
 
     @Column(name = "country")

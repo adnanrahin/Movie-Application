@@ -9,8 +9,12 @@ import java.sql.Timestamp;
 @Table(name = "address")
 public class Address {
 
+    public Address() {
+
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id", nullable = false)
     private Long addressId;
 
@@ -44,10 +48,6 @@ public class Address {
     @JsonIgnore
     @OneToOne(mappedBy = "address")
     private Store store;
-
-    public Address() {
-
-    }
 
     public Long getAddressId() {
         return addressId;

@@ -7,6 +7,10 @@ import java.sql.Timestamp;
 @Table(name = "actor", schema = "sakila")
 public class Actor {
 
+    public Actor(){
+
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "actor_id", unique = true, nullable = false)

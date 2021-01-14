@@ -7,6 +7,10 @@ import java.sql.Timestamp;
 @Table
 public class Staff {
 
+    public Staff() {
+
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "store_id")

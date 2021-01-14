@@ -7,8 +7,12 @@ import java.sql.Timestamp;
 @Table(name = "category")
 public class Category {
 
+    public Category() {
+
+    }
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
     private Long categoryId;
 
@@ -17,10 +21,6 @@ public class Category {
 
     @Column(name = "last_update")
     private Timestamp lastUpdate;
-
-    public Category() {
-
-    }
 
     public Long getCategoryId() {
         return categoryId;
