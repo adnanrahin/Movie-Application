@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.model;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "customer", schema = "sakila")
@@ -44,7 +45,7 @@ public class Customer {
 
     @Basic
     @Column(name = "create_date")
-    private LocalDateTime createDate;
+    private Timestamp createDate;
 
     @Basic
     @Column(name = "last_update")
@@ -106,11 +107,11 @@ public class Customer {
         this.active = tinyInt;
     }
 
-    public LocalDateTime getCreateDate() {
+    public Timestamp getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDateTime dateTime) {
+    public void setCreateDate(Timestamp dateTime) {
         this.createDate = dateTime;
     }
 
@@ -122,4 +123,16 @@ public class Customer {
         this.lastUpdate = lastUpdate;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Customer)) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(customerId, customer.customerId) && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(email, customer.email) && Objects.equals(addressId, customer.addressId) && Objects.equals(active, customer.active) && Objects.equals(createDate, customer.createDate) && Objects.equals(lastUpdate, customer.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerId, firstName, lastName, email, addressId, active, createDate, lastUpdate);
+    }
 }

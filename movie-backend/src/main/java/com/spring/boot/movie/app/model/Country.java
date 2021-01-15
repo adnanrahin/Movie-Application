@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "country")
@@ -60,5 +61,18 @@ public class Country {
 
     public void setCities(List<City> cities) {
         this.cities = cities;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Country)) return false;
+        Country country1 = (Country) o;
+        return Objects.equals(countryId, country1.countryId) && Objects.equals(country, country1.country) && Objects.equals(lastUpdate, country1.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(countryId, country, lastUpdate);
     }
 }

@@ -2,6 +2,7 @@ package com.spring.boot.movie.app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Entity
 @Table(name = "actor", schema = "sakila")
@@ -57,4 +58,16 @@ public class Actor {
         this.lastUpdate = lastUpdate;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Actor)) return false;
+        Actor actor = (Actor) o;
+        return Objects.equals(actorId, actor.actorId) && Objects.equals(firstName, actor.firstName) && Objects.equals(lastName, actor.lastName) && Objects.equals(lastUpdate, actor.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(actorId, firstName, lastName, lastUpdate);
+    }
 }

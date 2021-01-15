@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "language")
 public class Language {
 
-    public Language(){
+    public Language() {
 
     }
 
@@ -60,5 +61,18 @@ public class Language {
 
     public void setFilms(Set<Film> films) {
         this.films = films;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Language)) return false;
+        Language language = (Language) o;
+        return Objects.equals(languageId, language.languageId) && Objects.equals(name, language.name) && Objects.equals(lastUpdate, language.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(languageId, name, lastUpdate);
     }
 }

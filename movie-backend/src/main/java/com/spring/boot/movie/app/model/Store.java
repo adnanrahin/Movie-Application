@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -66,5 +67,18 @@ public class Store {
 
     public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Store)) return false;
+        Store store = (Store) o;
+        return Objects.equals(storeId, store.storeId) && Objects.equals(lastUpdate, store.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(storeId, lastUpdate);
     }
 }
