@@ -8,6 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-category-menu/category.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-category-menu/category.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-category-menu/category.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-category-menu/category.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +72,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MovieApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -125,7 +131,7 @@
       <workItem from="1610591814742" duration="11116000" />
       <workItem from="1610660304534" duration="783000" />
       <workItem from="1610678451971" duration="4876000" />
-      <workItem from="1610743232040" duration="13980000" />
+      <workItem from="1610743232040" duration="17705000" />
     </task>
     <servers />
   </component>

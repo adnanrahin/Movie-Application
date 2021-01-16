@@ -6,23 +6,27 @@ import {ActorListComponent} from './components/actor-list/actor-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ActorService} from './services/actor.service';
 import {RouterModule, Routes} from '@angular/router';
-import { CategoryComponent } from './components/movie-category-menu/category.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import {MovieListComponent} from './components/movie-list/movie-list.component';
+import {MovieCategoryMenuComponent} from './components/movie-category-menu/movie-category-menu.component';
 
 const routes: Routes = [
-  {path: 'actor-list', component: ActorListComponent},
   {path: 'category/:id', component: MovieListComponent},
   {path: 'category', component: MovieListComponent},
+  {path: 'movies', component: MovieListComponent},
+  {path: 'category', component: MovieListComponent},
+  {path: '', redirectTo: '/movies', pathMatch: 'full'},
+  {path: '**', redirectTo: '/movies', pathMatch: 'full'}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ActorListComponent,
-    CategoryComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieCategoryMenuComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
     RouterModule
