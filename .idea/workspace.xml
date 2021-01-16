@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/ActorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/ActorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/actor-list/actor-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/actor-list/actor-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/actor-list/actor-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/actor-list/actor-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/services/actor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/services/actor.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +131,7 @@
       <workItem from="1610591814742" duration="11116000" />
       <workItem from="1610660304534" duration="783000" />
       <workItem from="1610678451971" duration="4876000" />
-      <workItem from="1610743232040" duration="3137000" />
+      <workItem from="1610743232040" duration="9542000" />
     </task>
     <servers />
   </component>

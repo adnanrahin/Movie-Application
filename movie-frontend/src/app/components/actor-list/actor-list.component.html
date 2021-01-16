@@ -1,22 +1,22 @@
-<div class="card my-5">
-    <div class="card-body">
-        <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Last Update</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of actorList">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.firstName }}</td>
-                    <td>{{ user.lastName }}</td>
-                    <td>{{ user.lastUpdate }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+<table class="table table-hover">
+
+  <thead class="thead-dark">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Last Update</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let user of actorList">
+    <td>{{ user.id }}</td>
+    <td>{{ user.firstName }}</td>
+    <td>{{ user.lastName }}</td>
+    <td>{{ user.lastUpdate }}</td>
+  </tr>
+
+  </tbody>
+
+</table>
+
