@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/RestDataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/RestDataConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Spring-Resources/Movie-Application" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -124,6 +123,7 @@
       <workItem from="1610678451971" duration="4876000" />
       <workItem from="1610743232040" duration="24019000" />
       <workItem from="1610848918215" duration="6839000" />
+      <workItem from="1610903612706" duration="1073000" />
     </task>
     <servers />
   </component>
