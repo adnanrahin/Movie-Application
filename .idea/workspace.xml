@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/RestDataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/RestDataConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,10 +64,21 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
   <component name="RunManager" selected="Spring Boot.MovieApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (movie-frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/movie-frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -114,6 +125,7 @@
       <workItem from="1610660304534" duration="783000" />
       <workItem from="1610678451971" duration="4876000" />
       <workItem from="1610743232040" duration="24019000" />
+      <workItem from="1610848918215" duration="4445000" />
     </task>
     <servers />
   </component>

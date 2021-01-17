@@ -4,10 +4,18 @@ package com.spring.boot.movie.app.configurations;
 import com.spring.boot.movie.app.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import javax.persistence.EntityManager;
@@ -16,42 +24,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-
+@EnableWebSecurity
 @Configuration
-public class RestDataConfig implements RepositoryRestConfigurer {
-
-    private final EntityManager entityManager;
-
-    @Autowired
-    public RestDataConfig(@Qualifier("movieDSFactory") EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
+public class RestDataConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
-    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-
-        HttpMethod[] theUnSupportedActions = {HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PUT, HttpMethod.GET};
-
-        config.getExposureConfiguration()
-                .forDomainType(Film.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnSupportedActions))
-                .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(theUnSupportedActions)));
-
-        exposeIds(config);
-
+    protected void configure(HttpSecurity http) throws Exception {
+        http.cors();
     }
 
-    public void exposeIds(RepositoryRestConfiguration config) {
-        Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
-        List<Class> entityClasses = new ArrayList<>();
-
-        for (EntityType tempEntityType : entities) {
-            entityClasses.add(tempEntityType.getJavaType());
-        }
-
-        Class[] domainTypes = entityClasses.toArray(new Class[0]);
-
-        config.exposeIdsFor(domainTypes);
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new
+                UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        return source;
     }
-
 }
