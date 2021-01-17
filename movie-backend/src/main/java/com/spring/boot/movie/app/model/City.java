@@ -17,14 +17,14 @@ public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "city_id", nullable = false)
+    @Column(name = "city_id")
     private Long cityId;
 
     @Column(name = "city")
     private String city;
 
     @ManyToOne
-    @JoinColumn(name = "country_id", nullable = false)
+    @JoinColumn(name = "country_id")
     private Country country;
 
     @Basic
@@ -33,7 +33,7 @@ public class City {
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "city",
-    cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    cascade = CascadeType.ALL)
     private List<Address> addresses;
 
     public Long getCityId() {
@@ -76,16 +76,4 @@ public class City {
         this.addresses = addresses;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof City)) return false;
-        City city1 = (City) o;
-        return Objects.equals(cityId, city1.cityId) && Objects.equals(city, city1.city) && Objects.equals(lastUpdate, city1.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cityId, city, lastUpdate);
-    }
 }

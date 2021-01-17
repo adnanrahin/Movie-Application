@@ -47,16 +47,4 @@ public class Category {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Category)) return false;
-        Category category = (Category) o;
-        return Objects.equals(categoryId, category.categoryId) && Objects.equals(name, category.name) && Objects.equals(lastUpdate, category.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(categoryId, name, lastUpdate);
-    }
 }

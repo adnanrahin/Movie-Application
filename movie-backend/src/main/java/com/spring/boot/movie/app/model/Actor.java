@@ -14,7 +14,7 @@ public class Actor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "actor_id", unique = true, nullable = false)
+    @Column(name = "actor_id")
     private Long actorId;
 
     @Column(name = "first_name")
@@ -58,16 +58,4 @@ public class Actor {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Actor)) return false;
-        Actor actor = (Actor) o;
-        return Objects.equals(actorId, actor.actorId) && Objects.equals(firstName, actor.firstName) && Objects.equals(lastName, actor.lastName) && Objects.equals(lastUpdate, actor.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(actorId, firstName, lastName, lastUpdate);
-    }
 }

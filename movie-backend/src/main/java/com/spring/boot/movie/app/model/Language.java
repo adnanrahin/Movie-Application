@@ -28,7 +28,7 @@ public class Language {
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "language",
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+            cascade = CascadeType.ALL)
     private Set<Film> films;
 
     public Long getLanguageId() {

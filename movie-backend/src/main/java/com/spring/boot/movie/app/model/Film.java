@@ -27,7 +27,7 @@ public class Film {
     private String releaseYear;
 
     @ManyToOne
-    @JoinColumn(name = "language_id", nullable = false)
+    @JoinColumn(name = "language_id")
     private Language language;
 
     @Column(name = "original_language_id")

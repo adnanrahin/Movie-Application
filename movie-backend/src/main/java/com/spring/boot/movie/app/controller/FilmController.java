@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://loalhost:8080")
+@CrossOrigin(origins = "http://loalhost:4200")
 @RequestMapping("/api/film")
 public class FilmController {
 
@@ -26,7 +26,7 @@ public class FilmController {
     }
 
     @PostMapping("/save")
-    public void saveFilm(@RequestBody Film object) {
-        filmService.save(object);
+    public ResponseEntity<?> saveFilm(@RequestBody Film object) {
+        return ResponseEntity.ok(filmService.save(object));
     }
 }

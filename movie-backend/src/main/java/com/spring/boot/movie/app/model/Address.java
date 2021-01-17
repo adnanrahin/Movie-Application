@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "address")
@@ -16,39 +16,53 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id", nullable = false)
+    @Column(name = "address_id")
     private Long addressId;
 
-    @Column(name = "address", nullable = false, length = 50)
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "address2", length = 50)
+    @Column(name = "address2")
     private String address2;
 
-    @Column(name = "district", nullable = false, length = 20)
+    @Column(name = "district")
     private String district;
 
     @ManyToOne(fetch = FetchType.EAGER,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "city_id", nullable = false)
+            cascade = CascadeType.ALL)
+    @JoinColumn(name = "city_id")
     private City city;
 
-    @Column(name = "postal_code", nullable = false, length = 10)
+    @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name = "phone", nullable = false, length = 20)
+    @Column(name = "phone")
     private String phone;
 
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "address")
-    private Staff staff;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "address",
+            cascade = CascadeType.ALL)
+    private Set<Staff> staffSet;
 
     @JsonIgnore
     @OneToOne(mappedBy = "address")
     private Store store;
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "address",
+            cascade = CascadeType.ALL)
+    private Set<Customer> customers;
+
+    public Set<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Set<Customer> customers) {
+        this.customers = customers;
+    }
 
     public Long getAddressId() {
         return addressId;
@@ -114,12 +128,12 @@ public class Address {
         this.lastUpdate = lastUpdate;
     }
 
-    public Staff getStaff() {
-        return staff;
+    public Set<Staff> getStaffSet() {
+        return staffSet;
     }
 
-    public void setStaff(Staff staff) {
-        this.staff = staff;
+    public void setStaffSet(Set<Staff> staffSet) {
+        this.staffSet = staffSet;
     }
 
     public Store getStore() {
@@ -130,16 +144,4 @@ public class Address {
         this.store = store;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Address)) return false;
-        Address address1 = (Address) o;
-        return Objects.equals(addressId, address1.addressId) && Objects.equals(address, address1.address) && Objects.equals(address2, address1.address2) && Objects.equals(district, address1.district) && Objects.equals(postalCode, address1.postalCode) && Objects.equals(phone, address1.phone) && Objects.equals(lastUpdate, address1.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(addressId, address, address2, district, postalCode, phone, lastUpdate);
-    }
 }
