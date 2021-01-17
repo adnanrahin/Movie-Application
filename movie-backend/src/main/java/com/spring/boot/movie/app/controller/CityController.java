@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.City;
 import com.spring.boot.movie.app.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,13 +21,13 @@ public class CityController {
     }
 
     @GetMapping("/getAllCity")
-    public List<City> getAllCity() {
-        return (List<City>) cityService.findAll();
+    public ResponseEntity<List<City>> getAllCity() {
+        return ResponseEntity.ok((List<City>) cityService.findAll());
     }
 
     @PostMapping("/save")
-    public void saveCity(@RequestBody City object) {
-        cityService.save(object);
+    public ResponseEntity<?> saveCity(@RequestBody City object) {
+        return ResponseEntity.ok(cityService.save(object));
     }
 
 }

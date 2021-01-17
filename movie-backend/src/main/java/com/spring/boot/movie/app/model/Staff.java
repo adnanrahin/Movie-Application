@@ -13,14 +13,14 @@ public class Staff {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "store_id")
     private Long staffId;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String lastName;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -30,7 +30,7 @@ public class Staff {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "active", nullable = false)
+    @Column(name = "active")
     private Integer active;
 
     @Column(name = "username")
@@ -126,16 +126,4 @@ public class Staff {
         this.store = store;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Staff)) return false;
-        Staff staff = (Staff) o;
-        return Objects.equals(staffId, staff.staffId) && Objects.equals(firstName, staff.firstName) && Objects.equals(lastName, staff.lastName) && Objects.equals(email, staff.email) && Objects.equals(active, staff.active) && Objects.equals(userName, staff.userName) && Objects.equals(password, staff.password) && Objects.equals(timestamp, staff.timestamp);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(staffId, firstName, lastName, email, active, userName, password, timestamp);
-    }
 }

@@ -19,35 +19,28 @@ public class Customer {
     private Long customerId;
 
     @ManyToOne(fetch = FetchType.EAGER,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "store_id", nullable = false)
+            cascade = CascadeType.ALL)
+    @JoinColumn(name = "store_id")
     private Store store;
 
-    @Basic
     @Column(name = "first_name")
     private String firstName;
 
-    @Basic
     @Column(name = "last_name")
     private String lastName;
 
-    @Basic
     @Column(name = "email")
     private String email;
 
-    @Basic
     @Column(name = "address_id")
     private Integer addressId;
 
-    @Basic
     @Column(name = "active")
     private Integer active;
 
-    @Basic
     @Column(name = "create_date")
     private Timestamp createDate;
 
-    @Basic
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
@@ -123,16 +116,4 @@ public class Customer {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Customer)) return false;
-        Customer customer = (Customer) o;
-        return Objects.equals(customerId, customer.customerId) && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(email, customer.email) && Objects.equals(addressId, customer.addressId) && Objects.equals(active, customer.active) && Objects.equals(createDate, customer.createDate) && Objects.equals(lastUpdate, customer.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(customerId, firstName, lastName, email, addressId, active, createDate, lastUpdate);
-    }
 }
