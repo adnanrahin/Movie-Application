@@ -27,8 +27,6 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveCustomer(@RequestBody Customer object) {
-        System.out.println("Our Test Object");
-        System.out.println(object);
         return ResponseEntity.ok(customerService.save(object));
     }
 
