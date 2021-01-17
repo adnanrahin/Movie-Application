@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/RestDataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/RestDataConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,7 @@
       <workItem from="1610660304534" duration="783000" />
       <workItem from="1610678451971" duration="4876000" />
       <workItem from="1610743232040" duration="24019000" />
-      <workItem from="1610848918215" duration="4445000" />
+      <workItem from="1610848918215" duration="6839000" />
     </task>
     <servers />
   </component>
