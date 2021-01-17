@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "address")
@@ -43,12 +43,26 @@ public class Address {
     private Timestamp lastUpdate;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "address")
-    private Staff staff;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "address",
+            cascade = CascadeType.ALL)
+    private Set<Staff> staffSet;
 
     @JsonIgnore
     @OneToOne(mappedBy = "address")
     private Store store;
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "address",
+            cascade = CascadeType.ALL)
+    private Set<Customer> customers;
+
+    public Set<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Set<Customer> customers) {
+        this.customers = customers;
+    }
 
     public Long getAddressId() {
         return addressId;
@@ -114,12 +128,12 @@ public class Address {
         this.lastUpdate = lastUpdate;
     }
 
-    public Staff getStaff() {
-        return staff;
+    public Set<Staff> getStaffSet() {
+        return staffSet;
     }
 
-    public void setStaff(Staff staff) {
-        this.staff = staff;
+    public void setStaffSet(Set<Staff> staffSet) {
+        this.staffSet = staffSet;
     }
 
     public Store getStore() {

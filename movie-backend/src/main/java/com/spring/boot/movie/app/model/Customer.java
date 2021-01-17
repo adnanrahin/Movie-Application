@@ -2,8 +2,6 @@ package com.spring.boot.movie.app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Entity
 @Table(name = "customer", schema = "sakila")
@@ -32,8 +30,9 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "address_id")
-    private Integer addressId;
+    @ManyToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     @Column(name = "active")
     private Integer active;
@@ -60,6 +59,22 @@ public class Customer {
         this.store = store;
     }
 
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -84,13 +99,6 @@ public class Customer {
         this.email = email;
     }
 
-    public Integer getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(Integer addressId) {
-        this.addressId = addressId;
-    }
 
     public Integer getActive() {
         return active;
