@@ -20,12 +20,12 @@ public class ActorController {
         this.actorService = actorService;
     }
 
-    @GetMapping("/getAllActor")
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllActor")
     public ResponseEntity<List<Actor>> getAllActor() {
         return ResponseEntity.ok(actorService.findAll());
     }
 
-    @PostMapping("/save")
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveActor(@RequestBody Actor object) {
         return ResponseEntity.ok(actorService.save(object));
     }

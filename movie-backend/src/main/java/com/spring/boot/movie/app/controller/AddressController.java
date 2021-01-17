@@ -20,12 +20,12 @@ public class AddressController {
         this.addressService = addressService;
     }
 
-    @GetMapping("/getAllAddress")
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllAddress")
     public ResponseEntity<List<Address>> getAllAddress() {
         return ResponseEntity.ok((List<Address>) addressService.findAll());
     }
 
-    @PostMapping("/save")
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveAddress(@RequestBody Address object) {
         return ResponseEntity.ok(addressService.save(object));
     }

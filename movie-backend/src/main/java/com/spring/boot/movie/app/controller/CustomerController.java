@@ -20,7 +20,7 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/getAllCustomer")
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllCustomer")
     public ResponseEntity<List<Customer>> getAllCustomer() {
         return ResponseEntity.ok((List<Customer>) customerService.findAll());
     }

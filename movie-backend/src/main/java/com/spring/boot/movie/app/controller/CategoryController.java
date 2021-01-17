@@ -20,12 +20,12 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping("/getAllCategory")
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllCategory")
     public ResponseEntity<List<Category>> getAllCategory() {
         return ResponseEntity.ok((List<Category>) categoryService.findAll());
     }
 
-    @PostMapping("/save")
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveCategory(@RequestBody Category object) {
         return ResponseEntity.ok(categoryService.save(object));
     }

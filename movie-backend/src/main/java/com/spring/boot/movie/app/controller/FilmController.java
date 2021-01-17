@@ -20,12 +20,12 @@ public class FilmController {
         this.filmService = filmService;
     }
 
-    @GetMapping("/getAllFilm")
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllFilm")
     public ResponseEntity<List<Film>> getAllFilm() {
         return ResponseEntity.ok((List<Film>) filmService.findAll());
     }
 
-    @PostMapping("/save")
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveFilm(@RequestBody Film object) {
         return ResponseEntity.ok(filmService.save(object));
     }
