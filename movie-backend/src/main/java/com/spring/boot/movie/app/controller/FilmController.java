@@ -3,12 +3,13 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http//:localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/film")
 public class FilmController {
 
@@ -20,12 +21,12 @@ public class FilmController {
     }
 
     @GetMapping("/getAllFilm")
-    public List<Film> getAllFilm(){
-        return (List<Film>) filmService.findAll();
+    public ResponseEntity<List<Film>> getAllFilm() {
+        return ResponseEntity.ok((List<Film>) filmService.findAll());
     }
 
     @PostMapping("/save")
-    public void saveFilm(@RequestBody Film object){
+    public void saveFilm(@RequestBody Film object) {
         filmService.save(object);
     }
 }
