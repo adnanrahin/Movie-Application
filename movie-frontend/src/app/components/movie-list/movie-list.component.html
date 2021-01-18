@@ -1,5 +1,39 @@
-<div>
-  <li *ngFor="let movie of movies">
-    {{movie.title}}
-  </li>
-</div>
+<table class="table table-hover">
+
+  <thead class="thead-dark">
+  <tr>
+    <th>Tittle</th>
+    <th>Last Update</th>
+    <th>Description</th>
+    <th>Release Year</th>
+    <th>Language Id</th>
+    <th>Original Language ID</th>
+    <th>Rental Duration</th>
+    <th>Rental Rate</th>
+    <th>Length</th>
+    <th>Replacement Cost</th>
+    <th>Rating</th>
+    <th>Special Features</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let movie of movies">
+    <td>{{ movie.title }}</td>
+    <td>{{ movie.lastUpdate }}</td>
+    <td>{{ movie.description }}</td>
+    <td>{{ movie.releaseYear }}</td>
+    <td>{{ movie.languageId.toString() }}</td>
+    <td>{{ movie.originLanguageId }}</td>
+    <td>{{ movie.rentalDuration }}</td>
+    <td>{{ movie.rentalRate }}</td>
+    <td>{{ movie.length }}</td>
+    <td>{{ movie.replacementCost }}</td>
+    <td>{{ movie.rating }}</td>
+    <td>{{ movie.specialFeatures }}</td>
+  </tr>
+
+  </tbody>
+
+</table>
+

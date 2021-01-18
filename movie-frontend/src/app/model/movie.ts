@@ -1,5 +1,6 @@
-export class Movie {
+import { Timestamp } from 'rxjs';
 
+export class Movie {
   filmId: number;
   title: string;
   description: string;
