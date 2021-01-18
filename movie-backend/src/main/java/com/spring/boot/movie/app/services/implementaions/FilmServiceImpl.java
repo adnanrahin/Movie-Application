@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class FilmServiceImpl implements FilmService {
 
+    private final FilmRepository filmRepository;
+
     @Autowired
-    private FilmRepository filmRepository;
+    public FilmServiceImpl(FilmRepository filmRepository) {
+        this.filmRepository = filmRepository;
+    }
 
     @Override
     public List<Film> findAll() {
