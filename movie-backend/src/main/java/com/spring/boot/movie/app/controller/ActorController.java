@@ -29,4 +29,9 @@ public class ActorController {
     public ResponseEntity<?> saveActor(@RequestBody Actor object) {
         return ResponseEntity.ok(actorService.save(object));
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/deleteById/{id}")
+    public void deleteById(@PathVariable Long id) {
+        actorService.deleteById(id);
+    }
 }
