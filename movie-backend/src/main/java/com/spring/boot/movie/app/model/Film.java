@@ -2,7 +2,6 @@ package com.spring.boot.movie.app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Table(name = "film")
@@ -52,7 +51,7 @@ public class Film {
     private String specialFeatures;
 
     @Column(name = "last_update")
-    private Timestamp timestamp;
+    private Timestamp lastUpdate;
 
     public Long getFilmId() {
         return filmId;
@@ -86,12 +85,12 @@ public class Film {
         this.releaseYear = releaseYear;
     }
 
-    public Language getLanguageId() {
+    public Language getLanguage() {
         return language;
     }
 
-    public void setLanguageId(Language languageId) {
-        this.language = languageId;
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 
     public Long getOriginalLanguageId() {
@@ -150,24 +149,11 @@ public class Film {
         this.specialFeatures = specialFeatures;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getLastUpdate() {
+        return lastUpdate;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Film)) return false;
-        Film film = (Film) o;
-        return Objects.equals(filmId, film.filmId) && Objects.equals(title, film.title) && Objects.equals(description, film.description) && Objects.equals(releaseYear, film.releaseYear) && Objects.equals(originalLanguageId, film.originalLanguageId) && Objects.equals(rentalDuration, film.rentalDuration) && Objects.equals(rentalRate, film.rentalRate) && Objects.equals(length, film.length) && Objects.equals(replacementCost, film.replacementCost) && Objects.equals(rating, film.rating) && Objects.equals(specialFeatures, film.specialFeatures) && Objects.equals(timestamp, film.timestamp);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(filmId, title, description, releaseYear, originalLanguageId, rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, timestamp);
+    public void setLastUpdate(Timestamp lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 }
