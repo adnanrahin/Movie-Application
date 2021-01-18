@@ -8,6 +8,7 @@ import {ActorService} from './services/actor.service';
 import {RouterModule, Routes} from '@angular/router';
 import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {MovieCategoryMenuComponent} from './components/movie-category-menu/movie-category-menu.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [ActorService],
   bootstrap: [AppComponent]

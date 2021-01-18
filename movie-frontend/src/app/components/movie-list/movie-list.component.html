@@ -1,3 +1,4 @@
+<!--
 <table class="table table-hover">
 
   <thead class="thead-dark">
@@ -37,3 +38,65 @@
 
 </table>
 
+-->
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <!--loop over collection of products-->
+
+        <div *ngFor="let movie of movies" class="col-md-3">
+
+          <div class="product-box">
+
+            <a routerLink="/products/{{movie.filmId}}">
+              <h4>{{movie.title}}</h4>
+            </a>
+
+            <div class="price">{{movie.rentalRate | currency:'USD'}}</div>
+
+          </div>
+        </div>
+
+        <div *ngIf="movies?.length == 0" class="alert alert-warning col-md-12" role="alert">
+          No Products Found
+        </div>
+
+      </div>
+
+      <!--<div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6"></div>
+
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-9" style="padding-left: 30%">
+                <ngb-pagination [(page)]="thePageNumber"
+                                [pageSize]="thePageSize"
+                                [collectionSize]="theTotalElements"
+                                [maxSize]="5"
+                                [boundaryLinks]="true"
+                                (pageChange)="listProducts()">
+                </ngb-pagination>
+              </div>
+
+              <div class="col-md-3 mt-2" style="text-align: right;">
+                <span class="mr-2">Page Size</span>
+                <select (change)="updatePageSize($event.target.value)">
+                  <option>2</option>
+                  <option selected="true">5</option>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+</div>
