@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" afterDir="false" />
-    </list>
+    <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +118,7 @@
       <workItem from="1610848918215" duration="6839000" />
       <workItem from="1610906181158" duration="8588000" />
       <workItem from="1610922376393" duration="935000" />
-      <workItem from="1610946345044" duration="4417000" />
+      <workItem from="1610946345044" duration="4804000" />
     </task>
     <servers />
   </component>
