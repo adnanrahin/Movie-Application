@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +124,7 @@
       <workItem from="1610922376393" duration="935000" />
       <workItem from="1610946345044" duration="2583000" />
       <workItem from="1610994686175" duration="6591000" />
-      <workItem from="1611009892426" duration="5821000" />
+      <workItem from="1611009892426" duration="6188000" />
     </task>
     <servers />
   </component>
