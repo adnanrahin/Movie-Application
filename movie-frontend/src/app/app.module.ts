@@ -9,12 +9,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {MovieCategoryMenuComponent} from './components/movie-category-menu/movie-category-menu.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
   {path: 'category', component: MovieListComponent},
   {path: 'movies', component: MovieListComponent},
   {path: 'category', component: MovieListComponent},
+  {path: 'category/:id', component: MovieListComponent},
+  {path: 'search/:keyword', component: MovieListComponent},
   {path: '', redirectTo: '/movies', pathMatch: 'full'},
   {path: '**', redirectTo: '/movies', pathMatch: 'full'}
 ];
@@ -24,7 +27,8 @@ const routes: Routes = [
     AppComponent,
     ActorListComponent,
     MovieListComponent,
-    MovieCategoryMenuComponent
+    MovieCategoryMenuComponent,
+    SearchComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
