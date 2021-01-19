@@ -1,6 +1,9 @@
 package com.spring.boot.movie.app.services;
 
 import com.spring.boot.movie.app.model.Film;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -15,5 +18,7 @@ public interface FilmService {
     void delete(Film object);
 
     void deleteById(Long id);
+
+    Page<Film> findByTitleContaining(@RequestParam("title") String title, Pageable pageable);
 
 }

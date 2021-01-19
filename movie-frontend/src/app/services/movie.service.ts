@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Movie} from '../model/movie';
@@ -14,9 +14,16 @@ export class MovieService {
 
   private readonly apiUrl: string = 'http://localhost:8080/api/film';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  public getAllMovie(): Observable<Movie[]>{
+  public getAllMovie(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.apiUrl + '/getAllFilm');
   }
+
+  public findByTitle(value: string): Observable<Movie[]> {
+    const searchUrl = `${this.apiUrl}/findByTitle?title=${value}`;
+    return this.http.get<Movie[]>(searchUrl);
+  }
+
 }
