@@ -19,6 +19,6 @@ public interface FilmService {
 
     void deleteById(Long id);
 
-    Page<Film> findByTitleContaining(@RequestParam("title") String title, Pageable pageable);
+    List<Film> findByTitleContaining(@RequestParam("title") String title);
 
 }
