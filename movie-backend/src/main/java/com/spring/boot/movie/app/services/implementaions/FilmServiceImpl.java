@@ -4,6 +4,8 @@ import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.repositories.FilmRepository;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -48,4 +50,9 @@ public class FilmServiceImpl implements FilmService {
     public List<Film> findByTitleContaining(@RequestParam("title") String title) {
         return filmRepository.findByTitleContaining(title);
     }
+    @Override
+    public Page<Film> findByTitleContaining(@RequestParam("title") String title, Pageable page) {
+        return filmRepository.findByTitleContaining(title, page);
+    }
+
 }

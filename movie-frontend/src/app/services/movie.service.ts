@@ -21,8 +21,9 @@ export class MovieService {
     return this.http.get<Movie[]>(this.apiUrl + '/getAllFilm');
   }
 
-  public findByTitle(value: string): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.apiUrl + '/findByTitle/' + value);
+  public findByTitleContaining(value: string): Observable<Movie[]> {
+    const searchUrl = `${this.apiUrl}/findByTitleContaining/${value}`;
+    return this.http.get<Movie[]>(searchUrl);
   }
 
 }

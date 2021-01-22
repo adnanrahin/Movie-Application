@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from '../../services/movie.service';
 import {Movie} from '../../model/movie';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,8 +11,9 @@ import {Movie} from '../../model/movie';
 export class MovieListComponent implements OnInit {
 
   movies: Movie[] = [];
+  searchMode: boolean;
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {

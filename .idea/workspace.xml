@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/search/search.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" afterDir="false" />
     </list>
@@ -71,7 +76,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MovieApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
     <configuration name="E2E Tests (movie-frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/movie-frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -123,6 +128,7 @@
       <workItem from="1610906181158" duration="8588000" />
       <workItem from="1610922376393" duration="935000" />
       <workItem from="1611191468752" duration="3020000" />
+      <workItem from="1611279357803" duration="4709000" />
     </task>
     <servers />
   </component>

@@ -21,4 +21,6 @@ public interface FilmService {
 
     List<Film> findByTitleContaining(@RequestParam("title") String title);
 
+    Page<Film> findByTitleContaining(@RequestParam("title") String title, Pageable page);
+
 }

@@ -12,4 +12,5 @@ import java.util.List;
 @Repository
 public interface FilmRepository extends JpaRepository<Film, Long> {
     List<Film> findByTitleContaining(@RequestParam("title") String title);
+    Page<Film> findByTitleContaining(@RequestParam("title") String title, Pageable page);
 }
