@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieService} from '../../services/movie.service';
 import {Movie} from '../../model/movie';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -9,9 +10,7 @@ import {Movie} from '../../model/movie';
 })
 export class SearchComponent implements OnInit {
 
-  searchResult: Movie[] = [];
-
-  constructor(private movieService: MovieService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,8 +18,7 @@ export class SearchComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   doSearch(value: string) {
-    this.movieService.findByTitle(value).subscribe(data => {
-      this.searchResult = data;
-    });
+    console.log(`value=${value}`);
+    this.router.navigateByUrl(`/search/${value}`);
   }
 }
