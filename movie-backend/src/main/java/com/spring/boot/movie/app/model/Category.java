@@ -1,10 +1,7 @@
 package com.spring.boot.movie.app.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -26,7 +23,7 @@ public class Category {
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinTable(
             name = "film_category",
             joinColumns = {@JoinColumn(name = "category_id")},

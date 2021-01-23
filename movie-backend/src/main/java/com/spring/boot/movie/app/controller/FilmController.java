@@ -35,4 +35,9 @@ public class FilmController {
         return ResponseEntity.ok(filmService.findByTitleContaining(title));
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/findFilmByCategories/{value}")
+    public ResponseEntity<List<Film>> findFilmByCategories(@PathVariable String value){
+        return ResponseEntity.ok(filmService.findFilmByCategories(value));
+    }
+
 }

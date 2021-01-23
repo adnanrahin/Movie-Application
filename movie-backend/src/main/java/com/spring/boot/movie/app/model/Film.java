@@ -57,7 +57,7 @@ public class Film {
     private Timestamp lastUpdate;
 
     @JsonIgnore
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinTable(
             name = "film_category",
             joinColumns = {@JoinColumn(name = "film_id")},
