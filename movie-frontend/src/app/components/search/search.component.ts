@@ -19,6 +19,6 @@ export class SearchComponent implements OnInit {
   // tslint:disable-next-line:typedef
   doSearch(value: string) {
     console.log(`value=${value}`);
-    this.router.navigateByUrl(`/${value}`);
+    this.router.navigateByUrl(`/search/${value}`);
   }
 }

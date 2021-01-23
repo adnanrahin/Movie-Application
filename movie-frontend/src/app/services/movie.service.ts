@@ -22,7 +22,8 @@ export class MovieService {
   }
 
   public findByTitleContaining(value: string): Observable<Movie[]> {
-    const searchUrl = `${this.apiUrl}/findByTitleContaining/${value}`;
+    const searchUrl = `${this.apiUrl}/search/${value}`;
+    console.log(searchUrl + 'search url');
     return this.http.get<Movie[]>(searchUrl);
   }
 

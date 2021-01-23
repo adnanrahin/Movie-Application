@@ -3,8 +3,6 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,9 +30,9 @@ public class FilmController {
         return ResponseEntity.ok(filmService.save(object));
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/findByTitleContaining/{title}")
-    public ResponseEntity<Page<Film>> findByTitle(@PathVariable String title, Pageable page) {
-        return ResponseEntity.ok(filmService.findByTitleContaining(title, page));
+    @RequestMapping(method = RequestMethod.GET, path = "/search/{title}")
+    public ResponseEntity<List<Film>> findByTitle(@PathVariable String title) {
+        return ResponseEntity.ok(filmService.findByTitleContaining(title));
     }
 
 }
