@@ -37,8 +37,15 @@ export class MovieListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   private handleSearchMode() {
     const theKeyWord: string = this.route.snapshot.paramMap.get('keyword');
-    this.movieService.findByTitleContaining(theKeyWord).subscribe(data => {
-      this.movies = data;
-    });
+    // tslint:disable-next-line:triple-equals
+    if (theKeyWord != '') {
+      this.movieService.findByTitleContaining(theKeyWord).subscribe(data => {
+        this.movies = data;
+      });
+    } else {
+      this.movieService.getAllMovie().subscribe(data => {
+        this.movies = data;
+      });
+    }
   }
 }

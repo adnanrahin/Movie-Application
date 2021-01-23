@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/search/search.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" afterDir="false" />
@@ -127,7 +126,7 @@
       <workItem from="1611191468752" duration="3020000" />
       <workItem from="1611279357803" duration="5305000" />
       <workItem from="1611354525764" duration="1192000" />
-      <workItem from="1611365778617" duration="3096000" />
+      <workItem from="1611365778617" duration="9877000" />
     </task>
     <servers />
   </component>
@@ -149,11 +148,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/MovieDSConfig.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/CustomerServiceImpl.java</url>
           <line>32</line>

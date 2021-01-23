@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Movie} from '../../model/movie';
 import {Router} from '@angular/router';
 
 
