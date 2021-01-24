@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +39,13 @@ public class FilmController {
     @RequestMapping(method = RequestMethod.GET, path = "/category/{value}")
     public ResponseEntity<List<Film>> findFilmByCategoryId(@PathVariable Long value) {
         return ResponseEntity.ok(filmService.findFilmByCategoryId(value));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/movieDetails/{id}")
+    public ResponseEntity<?> getFilmById(@PathVariable Long id) {
+        Film film = filmService.findById(id);
+        return film != null ?
+                new ResponseEntity<>(film, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 }
