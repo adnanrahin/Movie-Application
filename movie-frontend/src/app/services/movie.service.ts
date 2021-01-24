@@ -33,7 +33,7 @@ export class MovieService {
     return this.http.get<Movie[]>(categoryUrl);
   }
 
-  public getFilmById(value: string): Observable<Movie> {
+  public getFilmById(value: number): Observable<Movie> {
     const movieUrl = `${this.apiUrl}/movieDetails/${value}`;
     return this.http.get<Movie>(movieUrl);
   }

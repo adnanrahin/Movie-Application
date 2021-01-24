@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

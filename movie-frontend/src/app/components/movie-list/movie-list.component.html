@@ -1,40 +1,3 @@
-<!--
-<table class="table table-hover">
-
-  <thead class="thead-dark">
-  <tr>
-    <th>Tittle</th>
-    <th>Last Update</th>
-    <th>Description</th>
-    <th>Release Year</th>
-    <th>Rental Duration</th>
-    <th>Rental Rate</th>
-    <th>Length</th>
-    <th>Replacement Cost</th>
-    <th>Rating</th>
-    <th>Special Features</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <tr *ngFor="let movie of movies">
-    <td>{{ movie.title }}</td>
-    <td>{{ movie.lastUpdate }}</td>
-    <td>{{ movie.description }}</td>
-    <td>{{ movie.releaseYear }}</td>
-    <td>{{ movie.rentalDuration }}</td>
-    <td>{{ movie.rentalRate }}</td>
-    <td>{{ movie.length }}</td>
-    <td>{{ movie.replacementCost }}</td>
-    <td>{{ movie.rating }}</td>
-    <td>{{ movie.specialFeatures }}</td>
-  </tr>
-
-  </tbody>
-
-</table>
-
--->
 <div class="main-content">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
@@ -45,7 +8,7 @@
 
           <div class="product-box">
 
-            <a routerLink="/products/{{movie.filmId}}">
+            <a routerLink="/movieDetails/{{movie.filmId}}">
               <h4>{{movie.title}}</h4>
             </a>
 
@@ -96,3 +59,4 @@
     </div>
   </div>
 </div>
+

@@ -1,1 +1,19 @@
-<p>movie-details works!</p>
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="detail-section">
+      <div class="container-fluid">
+
+        <h3>{{movie.title}}</h3>
+
+        <div class="price">{{movie.rentalRate | currency:'USD'}}</div>
+
+        <hr>
+        <h4>Description</h4>
+        <p>{{movie.description}}</p>
+
+        <a routerLink="/movies" class="mt-5">Back To product List</a>
+
+      </div>
+    </div>
+  </div>
+</div>
