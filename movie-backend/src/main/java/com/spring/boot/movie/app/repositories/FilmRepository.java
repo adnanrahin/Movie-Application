@@ -2,8 +2,9 @@ package com.spring.boot.movie.app.repositories;
 
 import com.spring.boot.movie.app.model.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -12,5 +13,8 @@ import java.util.List;
 public interface FilmRepository extends JpaRepository<Film, Long> {
     List<Film> findByTitleContaining(@RequestParam("title") String title);
 
-    List<Film> findFilmByCategories(@PathVariable String value);
+    @Query(value = "SELECT * FROM sakila.film, sakila.category, sakila.film_category\n" +
+            "where sakila.film.film_id = sakila.film_category.film_id and sakila.category.category_id = sakila.film_category.category_id \n" +
+            "and category.category_id = :categoryId", nativeQuery = true)
+    List<Film> findFilmByCategoryId(@Param("categoryId") Long categoryId);
 }

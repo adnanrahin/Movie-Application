@@ -4,6 +4,7 @@ import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.repositories.FilmRepository;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -50,8 +51,8 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public List<Film> findFilmByCategories(String value) {
-        return filmRepository.findFilmByCategories(value);
+    public List<Film> findFilmByCategoryId(@Param("categoryId") Long categoryId) {
+        return filmRepository.findFilmByCategoryId(categoryId);
     }
 
 }

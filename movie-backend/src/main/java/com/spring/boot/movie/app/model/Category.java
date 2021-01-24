@@ -1,11 +1,17 @@
 package com.spring.boot.movie.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Set;
 
 @Entity
 @Table(name = "category")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "categoryId")
 public class Category {
 
     public Category() {

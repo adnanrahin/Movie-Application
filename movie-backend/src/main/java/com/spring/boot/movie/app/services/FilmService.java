@@ -1,6 +1,7 @@
 package com.spring.boot.movie.app.services;
 
 import com.spring.boot.movie.app.model.Film;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,6 +21,6 @@ public interface FilmService {
 
     List<Film> findByTitleContaining(@RequestParam("title") String title);
 
-    List<Film> findFilmByCategories(@PathVariable String value);
+    List<Film> findFilmByCategoryId(@Param("categoryId") Long categoryId);
 
 }

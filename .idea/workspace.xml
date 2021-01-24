@@ -8,10 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/model/Film.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,20 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MovieApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (movie-frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/movie-frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -153,6 +166,11 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/configurations/MovieDSConfig.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/CustomerServiceImpl.java</url>
           <line>32</line>
