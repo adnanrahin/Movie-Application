@@ -27,4 +27,10 @@ export class MovieService {
     return this.http.get<Movie[]>(searchUrl);
   }
 
+  public findFilmByCategoryId(value: string): Observable<Movie[]> {
+    const categoryUrl = `${this.apiUrl}/category/${value}`;
+    console.log(categoryUrl);
+    return this.http.get<Movie[]>(categoryUrl);
+  }
+
 }
