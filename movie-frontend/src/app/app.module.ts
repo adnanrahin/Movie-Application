@@ -10,6 +10,7 @@ import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {MovieCategoryMenuComponent} from './components/movie-category-menu/movie-category-menu.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
     ActorListComponent,
     MovieListComponent,
     MovieCategoryMenuComponent,
-    SearchComponent
+    SearchComponent,
+    MovieDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
