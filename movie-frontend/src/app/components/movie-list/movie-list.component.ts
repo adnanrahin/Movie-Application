@@ -17,7 +17,9 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.handleListMovie();
+    this.route.paramMap.subscribe(() => {
+      this.handleListMovie();
+    });
   }
 
   // tslint:disable-next-line:typedef
