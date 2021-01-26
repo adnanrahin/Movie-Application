@@ -11,11 +11,14 @@
         <h4>Description</h4>
         <p>{{movie.description}}</p>
 
-        <h4>Movie Features</h4>
-        <p>{{movie.specialFeatures}}</p>
-
-        <h4>Movie Language</h4>
-        <p>{{movie.language.name}}</p>
+        <h4>Movie Details</h4>
+        <p>Movie Features: {{movie.specialFeatures}}</p>
+        <p>Language: {{movie.language.name}}</p>
+        <p>Rental Rate: {{movie.rentalRate | currency:'USD'}}</p>
+        <p>Length: {{movie.length}}</p>
+        <p>Replacement Cost: {{movie.replacementCost}}</p>
+        <p>Rental Duration: {{movie.rentalDuration}}</p>
+        <p>Last Update: {{movie.lastUpdate}}</p>
 
         <a routerLink="/movies" class="mt-5">Back To product List</a>
 
