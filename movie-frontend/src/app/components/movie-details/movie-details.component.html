@@ -20,6 +20,11 @@
         <p>Rental Duration: {{movie.rentalDuration}}</p>
         <p>Last Update: {{movie.lastUpdate}}</p>
 
+        <h4>List of Actors: </h4>
+        <div *ngFor="let actor of movie.actors">
+          {{actor.firstName}} {{actor.lastName}}
+        </div>
+
         <a routerLink="/movies" class="mt-5">Back To product List</a>
 
       </div>

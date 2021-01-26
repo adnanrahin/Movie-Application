@@ -1,4 +1,5 @@
-import {Language} from "./language";
+import {Language} from './language';
+import {Actor} from './actor';
 
 export class Movie {
   filmId: number;
@@ -14,6 +15,7 @@ export class Movie {
   rating: string;
   specialFeatures: string;
   lastUpdate: Date;
+  actors: Actor[];
 
 
   // tslint:disable-next-line:max-line-length
