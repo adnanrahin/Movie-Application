@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-details/movie-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/movie-list/movie-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/services/movie.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,19 +70,6 @@
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="E2E Tests (movie-frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/movie-frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -144,6 +126,7 @@
       <workItem from="1611365778617" duration="9877000" />
       <workItem from="1611389829574" duration="4676000" />
       <workItem from="1611429320683" duration="1549000" />
+      <workItem from="1611512371297" duration="1200000" />
     </task>
     <servers />
   </component>
