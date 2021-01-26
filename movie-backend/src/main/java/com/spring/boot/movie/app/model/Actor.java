@@ -1,14 +1,17 @@
 package com.spring.boot.movie.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "actor", schema = "sakila")
 public class Actor {
 
-    public Actor(){
+    public Actor() {
 
     }
 
@@ -25,6 +28,15 @@ public class Actor {
 
     @Column(name = "last_update")
     private Timestamp lastUpdate;
+
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "film_actor",
+            joinColumns = {@JoinColumn(name = "actor_id")},
+            inverseJoinColumns = {@JoinColumn(name = "film_id")}
+    )
+    private Set<Film> films;
 
     public Long getActorId() {
         return actorId;
@@ -58,6 +70,14 @@ public class Actor {
         this.lastUpdate = lastUpdate;
     }
 
+    public Set<Film> getFilms() {
+        return films;
+    }
+
+    public void setFilms(Set<Film> films) {
+        this.films = films;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,4 +90,5 @@ public class Actor {
     public int hashCode() {
         return Objects.hash(actorId, firstName, lastName, lastUpdate);
     }
+
 }
