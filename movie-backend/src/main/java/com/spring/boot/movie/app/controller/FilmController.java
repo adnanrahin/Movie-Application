@@ -48,4 +48,10 @@ public class FilmController {
                 new ResponseEntity<>(film, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllFilmByActor/{id}")
+    public ResponseEntity<List<Film>> getFilmByActorId(@PathVariable Long id) {
+        List<Film> films = filmService.findFilmByActorId(id);
+        return films != null ? new ResponseEntity<>(films, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 }
