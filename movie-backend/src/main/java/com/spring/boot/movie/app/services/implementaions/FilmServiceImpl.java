@@ -56,8 +56,8 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public List<Film> findFilmByActorName() {
-        return null;
+    public List<Film> findFilmByActorName(@Param("actorId") Long actorId) {
+        return filmRepository.findFilmByCategoryId(actorId);
     }
 
 }
