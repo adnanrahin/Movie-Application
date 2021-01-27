@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" afterDir="false" />
     </list>
@@ -130,7 +132,7 @@
       <workItem from="1611429320683" duration="1549000" />
       <workItem from="1611512371297" duration="1200000" />
       <workItem from="1611630551925" duration="6436000" />
-      <workItem from="1611714140433" duration="745000" />
+      <workItem from="1611714140433" duration="1011000" />
     </task>
     <servers />
   </component>

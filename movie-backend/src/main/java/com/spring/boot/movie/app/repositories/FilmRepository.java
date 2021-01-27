@@ -24,6 +24,6 @@ public interface FilmRepository extends JpaRepository<Film, Long> {
                     "        left join sakila.film_actor on (sakila.film.film_id = sakila.film_actor.film_id)\n" +
                     "        left join sakila.actor on (sakila.actor.actor_id = sakila.film_actor.actor_id)\n" +
                     "        where sakila.actor.actor_id = :actorId", nativeQuery = true)
-    List<Film> findFilmByActorsId(@Param("actorId") Long actorId);
+    List<Film> findFilmByActorId(@Param("actorId") Long actorId);
 
 }

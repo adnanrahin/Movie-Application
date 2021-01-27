@@ -22,5 +22,5 @@ public interface FilmService {
 
     List<Film> findFilmByCategoryId(@Param("categoryId") Long categoryId);
 
-    List<Film> findFilmByActorName(@Param("actorId") Long actorId);
+    List<Film> findFilmByActorId(@Param("actorId") Long actorId);
 }
