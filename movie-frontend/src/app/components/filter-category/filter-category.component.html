@@ -1,4 +1,3 @@
-
 <div>
   <div (mouseleave)="showDropDown = false">
     <button class="drop-toggle btn flat" (click)="showDropDown=!showDropDown">
@@ -7,11 +6,32 @@
       <i class="fa fa-angle-down"></i>
     </button>
     <div class="drop-show" *ngIf="showDropDown">
-      <label *ngFor="let a of list">
-        <input type="checkbox" [(ngModel)]="a.checked"
-               (change)="getSelectedValue(a.checked,a.name)" />
-        <span>{{a.name}}</span>
+      <label *ngFor="let category of allCategory">
+        <input type="checkbox"
+               (change)="getSelectedValue(category.name)"/>
+        <a routerLink="/category/{{category.categoryId}}" routerLinkActive="active-link">
+          {{category.name}}</a>
+        <span>{{category.name}}</span>
       </label>
     </div>
   </div>
 </div>
+<!--
+<div class="container">
+
+  <div class="form-group">
+    <select formControlName="website" class="form-control">
+      <option disabled>Select Website</option>
+      <option>Choose Website</option>
+      <option *ngFor="let web of allCategory">
+        <label>
+          <input type="checkbox" [(ngModel)]="web.name"
+                 (change)="getSelectedValue(web.name)"/>
+        </label>
+        {{web.name}}
+      </option>
+    </select>
+  </div>
+
+</div>
+-->

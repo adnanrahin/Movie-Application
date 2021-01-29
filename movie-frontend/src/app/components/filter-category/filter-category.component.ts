@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CategoryService} from '../../services/category.service';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-filter-category',
@@ -7,24 +9,35 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class FilterCategoryComponent implements OnInit {
 
-  @Input() list: any[];
-
-  @Output() shareCheckedList = new EventEmitter();
-  @Output() shareIndividualCheckedList = new EventEmitter();
-
-
-  checkedList: any[];
-  currentSelected: {};
-
-  constructor() {
+  constructor(private categoryService: CategoryService) {
     this.checkedList = [];
   }
 
+  @Input() list: any[];
+  @Output() shareCheckedList = new EventEmitter();
+  @Output() shareIndividualCheckedList = new EventEmitter();
+
+  allCategory: Category[] = [];
+  checkedList: any[];
+  currentSelected: {};
+
+  // tslint:disable-next-line:typedef
+  showDropDown: boolean;
+
   ngOnInit(): void {
+    this.getAllCategory();
   }
 
   // tslint:disable-next-line:typedef
-  getSelectedValue(status: boolean, value: string) {
+  public getAllCategory() {
+    this.categoryService.getAllCategory().subscribe(data => {
+      this.allCategory = data;
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  getSelectedValue(value: string) {
+    console.log(value);
     if (status) {
       this.checkedList.push(value);
     } else {
