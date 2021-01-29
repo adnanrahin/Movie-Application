@@ -66,10 +66,10 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MovieApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
     <configuration name="E2E Tests (movie-frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/movie-frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -129,6 +129,8 @@
       <workItem from="1611512371297" duration="1200000" />
       <workItem from="1611630551925" duration="7922000" />
       <workItem from="1611705361205" duration="603000" />
+      <workItem from="1611798191322" duration="4171000" />
+      <workItem from="1611872449123" duration="1190000" />
     </task>
     <servers />
   </component>
