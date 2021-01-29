@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { FilterCategoryComponent } from './components/filter-category/filter-category.component';
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
@@ -35,13 +36,14 @@ const routes: Routes = [
     MovieDetailsComponent,
     FilterCategoryComponent
   ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    HttpClientModule,
-    RouterModule,
-    NgbModule
-  ],
+    imports: [
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        HttpClientModule,
+        RouterModule,
+        NgbModule,
+        FormsModule
+    ],
   providers: [ActorService],
   bootstrap: [AppComponent]
 })

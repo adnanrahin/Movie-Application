@@ -1,1 +1,17 @@
-<p>filter-category works!</p>
+
+<div>
+  <div (mouseleave)="showDropDown = false">
+    <button class="drop-toggle btn flat" (click)="showDropDown=!showDropDown">
+      <span *ngIf="checkedList.length<=0">Select</span>
+      <span *ngIf="checkedList.length>0">{{checkedList.join(', ')}}</span>
+      <i class="fa fa-angle-down"></i>
+    </button>
+    <div class="drop-show" *ngIf="showDropDown">
+      <label *ngFor="let a of list">
+        <input type="checkbox" [(ngModel)]="a.checked"
+               (change)="getSelectedValue(a.checked,a.name)" />
+        <span>{{a.name}}</span>
+      </label>
+    </div>
+  </div>
+</div>
