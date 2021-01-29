@@ -11,6 +11,7 @@ import {MovieCategoryMenuComponent} from './components/movie-category-menu/movie
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/search/search.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { FilterCategoryComponent } from './components/filter-category/filter-category.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
     MovieListComponent,
     MovieCategoryMenuComponent,
     SearchComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    FilterCategoryComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
