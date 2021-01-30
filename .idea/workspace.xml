@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/repositories/FilmRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/FilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/services/implementaions/FilmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (movie-frontend)">
+  <component name="RunManager" selected="Spring Boot.MovieApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -145,7 +143,7 @@
       <workItem from="1611705361205" duration="603000" />
       <workItem from="1611798191322" duration="4171000" />
       <workItem from="1611872449123" duration="1190000" />
-      <workItem from="1611975123966" duration="397000" />
+      <workItem from="1611975123966" duration="634000" />
     </task>
     <servers />
   </component>
