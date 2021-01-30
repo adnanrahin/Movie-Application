@@ -26,4 +26,9 @@ public interface FilmRepository extends JpaRepository<Film, Long> {
                     "        where sakila.actor.actor_id = :actorId", nativeQuery = true)
     List<Film> findFilmByActorId(@Param("actorId") Long actorId);
 
+    @Query(value = "SELECT * FROM sakila.film, sakila.category, sakila.film_category\n" +
+            "where sakila.film.film_id = sakila.film_category.film_id and sakila.category.category_id = sakila.film_category.category_id \n" +
+            "and category.name = :categoryName", nativeQuery = true)
+    List<Film> findFilmByCategoryName(@Param("categoryName") String categoryName);
+
 }

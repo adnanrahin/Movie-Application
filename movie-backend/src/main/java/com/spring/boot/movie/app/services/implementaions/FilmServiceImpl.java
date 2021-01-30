@@ -60,4 +60,9 @@ public class FilmServiceImpl implements FilmService {
         return filmRepository.findFilmByCategoryId(actorId);
     }
 
+    @Override
+    public List<Film> findFilmByCategoryName(String categoryName) {
+        return filmRepository.findFilmByCategoryName(categoryName);
+    }
+
 }
