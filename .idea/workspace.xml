@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/main/java/com/spring/boot/movie/app/controller/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/filter-category/filter-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/filter-category/filter-category.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-frontend/src/app/components/filter-category/filter-category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movie-frontend/src/app/components/filter-category/filter-category.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JavaScript/angular-multiple-checkbox" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -143,7 +144,7 @@
       <workItem from="1611705361205" duration="603000" />
       <workItem from="1611798191322" duration="4171000" />
       <workItem from="1611872449123" duration="1190000" />
-      <workItem from="1611975123966" duration="634000" />
+      <workItem from="1611975123966" duration="3004000" />
     </task>
     <servers />
   </component>
