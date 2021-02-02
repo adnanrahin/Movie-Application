@@ -19,6 +19,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -80,7 +81,7 @@
       <recent name="com.spring.boot.movie.app.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ActorTest.getLastUpdate">
+  <component name="RunManager" selected="JUnit.ActorTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -170,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ActorTest.getLastUpdate" />
         <item itemvalue="JUnit.ActorTest" />
+        <item itemvalue="JUnit.ActorTest.getLastUpdate" />
         <item itemvalue="JUnit.IndexControllerTest" />
       </list>
     </recent_temporary>
@@ -208,7 +209,7 @@
       <workItem from="1611872449123" duration="1190000" />
       <workItem from="1612144938301" duration="6672000" />
       <workItem from="1612196858163" duration="1457000" />
-      <workItem from="1612240090896" duration="712000" />
+      <workItem from="1612240090896" duration="901000" />
     </task>
     <servers />
   </component>

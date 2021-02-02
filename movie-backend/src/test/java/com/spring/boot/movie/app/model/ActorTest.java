@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +21,6 @@ public class ActorTest {
     @Test
     void getId() {
         actor.setActorId(6L);
-
         assertEquals(6L, actor.getActorId());
     }
 
@@ -43,7 +43,7 @@ public class ActorTest {
     @Test
     void getLastUpdate() {
         Calendar calendar = Calendar.getInstance();
-        java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(calendar.getTime().getTime());
+        Timestamp currentTimestamp = new Timestamp(calendar.getTime().getTime());
         actor.setLastUpdate(currentTimestamp);
         assertEquals(currentTimestamp, actor.getLastUpdate());
     }
