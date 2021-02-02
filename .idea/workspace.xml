@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/test/java/com/spring/boot/movie/app/model/ActorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/test/java/com/spring/boot/movie/app/model/ActorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +57,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -70,7 +72,72 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\rahin\source-code\IdeaProjects\Movie-Application\movie-frontend\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MovieApplication">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.spring.boot.movie.app.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ActorTest.getLastUpdate">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="movie-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spring.boot.movie.app.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spring.boot.movie.app.model" />
+      <option name="MAIN_CLASS_NAME" value="com.spring.boot.movie.app.model.ActorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActorTest.getLastUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="movie-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spring.boot.movie.app.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spring.boot.movie.app.model" />
+      <option name="MAIN_CLASS_NAME" value="com.spring.boot.movie.app.model.ActorTest" />
+      <option name="METHOD_NAME" value="getLastUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IndexControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="movie-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spring.boot.movie.app.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spring.boot.movie.app.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.spring.boot.movie.app.controller.IndexControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (movie-frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/movie-frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -101,6 +168,13 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ActorTest.getLastUpdate" />
+        <item itemvalue="JUnit.ActorTest" />
+        <item itemvalue="JUnit.IndexControllerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -132,7 +206,9 @@
       <workItem from="1611705361205" duration="603000" />
       <workItem from="1611798191322" duration="4171000" />
       <workItem from="1611872449123" duration="1190000" />
-      <workItem from="1612144938301" duration="74000" />
+      <workItem from="1612144938301" duration="6672000" />
+      <workItem from="1612196858163" duration="1457000" />
+      <workItem from="1612240090896" duration="712000" />
     </task>
     <servers />
   </component>
