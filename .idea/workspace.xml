@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd8bd2a0-6ccc-49b3-a0d8-ce62b29fdfe1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-backend/src/test/java/com/spring/boot/movie/app/model/ActorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/test/java/com/spring/boot/movie/app/model/ActorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie-backend/src/test/java/com/spring/boot/movie/app/model/CategoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/movie-backend/src/test/java/com/spring/boot/movie/app/model/CategoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +209,7 @@
       <workItem from="1611872449123" duration="1190000" />
       <workItem from="1612144938301" duration="6672000" />
       <workItem from="1612196858163" duration="1457000" />
-      <workItem from="1612240090896" duration="901000" />
+      <workItem from="1612240090896" duration="1102000" />
     </task>
     <servers />
   </component>

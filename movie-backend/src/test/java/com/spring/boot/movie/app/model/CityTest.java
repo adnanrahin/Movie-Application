@@ -3,18 +3,22 @@ package com.spring.boot.movie.app.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CategoryTest {
+class CityTest {
 
     @BeforeEach
     void setUp() {
     }
 
     @Test
-    void getCategoryId() {
+    void getCityId() {
     }
 
     @Test
-    void getName() {
+    void getCity() {
+    }
+
+    @Test
+    void getCountry() {
     }
 
     @Test
@@ -22,6 +26,6 @@ class CategoryTest {
     }
 
     @Test
-    void getFilms() {
+    void getAddresses() {
     }
 }
