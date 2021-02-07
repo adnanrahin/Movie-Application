@@ -4,15 +4,21 @@ import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.repositories.FilmRepository;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Service
 public class FilmServiceImpl implements FilmService {
 
+    private final FilmRepository filmRepository;
+
     @Autowired
-    private FilmRepository filmRepository;
+    public FilmServiceImpl(FilmRepository filmRepository) {
+        this.filmRepository = filmRepository;
+    }
 
     @Override
     public List<Film> findAll() {
@@ -38,4 +44,20 @@ public class FilmServiceImpl implements FilmService {
     public void deleteById(Long id) {
         filmRepository.deleteById(id);
     }
+
+    @Override
+    public List<Film> findByTitleContaining(@RequestParam("title") String title) {
+        return filmRepository.findByTitleContaining(title);
+    }
+
+    @Override
+    public List<Film> findFilmByCategoryId(@Param("categoryId") Long categoryId) {
+        return filmRepository.findFilmByCategoryId(categoryId);
+    }
+
+    @Override
+    public List<Film> findFilmByActorId(@Param("actorId") Long actorId) {
+        return filmRepository.findFilmByCategoryId(actorId);
+    }
+
 }

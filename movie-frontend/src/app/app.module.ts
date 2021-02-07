@@ -8,12 +8,18 @@ import {ActorService} from './services/actor.service';
 import {RouterModule, Routes} from '@angular/router';
 import {MovieListComponent} from './components/movie-list/movie-list.component';
 import {MovieCategoryMenuComponent} from './components/movie-category-menu/movie-category-menu.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './components/search/search.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
   {path: 'category', component: MovieListComponent},
+  {path: 'movieDetails/:id', component: MovieDetailsComponent},
   {path: 'movies', component: MovieListComponent},
   {path: 'category', component: MovieListComponent},
+  {path: 'category/:id', component: MovieListComponent},
+  {path: 'search/:keyword', component: MovieListComponent},
   {path: '', redirectTo: '/movies', pathMatch: 'full'},
   {path: '**', redirectTo: '/movies', pathMatch: 'full'}
 ];
@@ -23,13 +29,16 @@ const routes: Routes = [
     AppComponent,
     ActorListComponent,
     MovieListComponent,
-    MovieCategoryMenuComponent
+    MovieCategoryMenuComponent,
+    SearchComponent,
+    MovieDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [ActorService],
   bootstrap: [AppComponent]

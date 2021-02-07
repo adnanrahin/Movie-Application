@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/actor")
 public class ActorController {
 
@@ -20,13 +19,18 @@ public class ActorController {
         this.actorService = actorService;
     }
 
-    @GetMapping("/getAllActor")
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllActor")
     public ResponseEntity<List<Actor>> getAllActor() {
         return ResponseEntity.ok(actorService.findAll());
     }
 
-    @PostMapping("/save")
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveActor(@RequestBody Actor object) {
         return ResponseEntity.ok(actorService.save(object));
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/deleteById/{id}")
+    public void deleteById(@PathVariable Long id) {
+        actorService.deleteById(id);
     }
 }

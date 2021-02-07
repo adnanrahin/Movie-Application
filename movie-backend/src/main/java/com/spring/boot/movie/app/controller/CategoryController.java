@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Category;
 import com.spring.boot.movie.app.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,14 +20,14 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping("/getAllCategory")
-    public List<Category> getAllCategory() {
-        return (List<Category>) categoryService.findAll();
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllCategory")
+    public ResponseEntity<List<Category>> getAllCategory() {
+        return ResponseEntity.ok((List<Category>) categoryService.findAll());
     }
 
-    @PostMapping("/save")
-    public void saveCategory(@RequestBody Category object) {
-        categoryService.save(object);
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
+    public ResponseEntity<?> saveCategory(@RequestBody Category object) {
+        return ResponseEntity.ok(categoryService.save(object));
     }
 
 }

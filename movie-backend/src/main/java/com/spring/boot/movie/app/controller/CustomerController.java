@@ -3,12 +3,13 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Customer;
 import com.spring.boot.movie.app.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http//:localhost:4200")
 @RequestMapping("/api/customer")
 public class CustomerController {
 
@@ -19,14 +20,14 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/getAllCustomer")
-    public List<Customer> getAllCustomer() {
-        return (List<Customer>) customerService.findAll();
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllCustomer")
+    public ResponseEntity<List<Customer>> getAllCustomer() {
+        return ResponseEntity.ok((List<Customer>) customerService.findAll());
     }
 
-    @PostMapping("/save")
-    public void saveCustomer(@RequestBody Customer object) {
-        customerService.save(object);
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
+    public ResponseEntity<?> saveCustomer(@RequestBody Customer object) {
+        return ResponseEntity.ok(customerService.save(object));
     }
 
 }

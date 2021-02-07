@@ -28,7 +28,7 @@ public class Country {
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "country",
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+            cascade = CascadeType.ALL)
     private List<City> cities;
 
     public Long getCountryId() {
@@ -63,16 +63,4 @@ public class Country {
         this.cities = cities;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Country)) return false;
-        Country country1 = (Country) o;
-        return Objects.equals(countryId, country1.countryId) && Objects.equals(country, country1.country) && Objects.equals(lastUpdate, country1.lastUpdate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(countryId, country, lastUpdate);
-    }
 }

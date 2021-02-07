@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Country;
 import com.spring.boot.movie.app.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,14 +20,14 @@ public class CountryController {
         this.countryService = countryService;
     }
 
-    @GetMapping("/getAllCountry")
-    public List<Country> getAllCountry() {
-        return (List<Country>) countryService.findAll();
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllCountry")
+    public ResponseEntity<List<Country>> getAllCountry() {
+        return ResponseEntity.ok((List<Country>) countryService.findAll());
     }
 
-    @PostMapping("/save")
-    public void saveCountry(@RequestBody Country object) {
-        countryService.save(object);
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
+    public ResponseEntity<?> saveCountry(@RequestBody Country object) {
+        return ResponseEntity.ok(countryService.save(object));
     }
 
 }

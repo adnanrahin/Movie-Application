@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.controller;
 import com.spring.boot.movie.app.model.Address;
 import com.spring.boot.movie.app.services.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,13 +20,13 @@ public class AddressController {
         this.addressService = addressService;
     }
 
-    @GetMapping("/getAllAddress")
-    public List<Address> getAllAddress() {
-        return (List<Address>) addressService.findAll();
+    @RequestMapping(method = RequestMethod.GET, path = "/getAllAddress")
+    public ResponseEntity<List<Address>> getAllAddress() {
+        return ResponseEntity.ok((List<Address>) addressService.findAll());
     }
 
-    @PostMapping("/save")
-    public void saveAddress(@RequestBody Address object) {
-        addressService.save(object);
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
+    public ResponseEntity<?> saveAddress(@RequestBody Address object) {
+        return ResponseEntity.ok(addressService.save(object));
     }
 }

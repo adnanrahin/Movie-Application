@@ -1,11 +1,17 @@
 package com.spring.boot.movie.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "category")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "categoryId")
 public class Category {
 
     public Category() {
@@ -22,6 +28,14 @@ public class Category {
 
     @Column(name = "last_update")
     private Timestamp lastUpdate;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "film_category",
+            joinColumns = {@JoinColumn(name = "category_id")},
+            inverseJoinColumns = {@JoinColumn(name = "film_id")}
+    )
+    private Set<Film> films;
 
     public Long getCategoryId() {
         return categoryId;
@@ -47,16 +61,11 @@ public class Category {
         this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Category)) return false;
-        Category category = (Category) o;
-        return Objects.equals(categoryId, category.categoryId) && Objects.equals(name, category.name) && Objects.equals(lastUpdate, category.lastUpdate);
+    public Set<Film> getFilms() {
+        return films;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(categoryId, name, lastUpdate);
+    public void setFilms(Set<Film> films) {
+        this.films = films;
     }
 }

@@ -1,8 +1,10 @@
 package com.spring.boot.movie.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "film")
@@ -14,7 +16,7 @@ public class Film {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "film_id")
+    @Column(name = "film_id", unique = true, nullable = false)
     private Long filmId;
 
     @Column(name = "title")
@@ -27,7 +29,7 @@ public class Film {
     private String releaseYear;
 
     @ManyToOne
-    @JoinColumn(name = "language_id", nullable = false)
+    @JoinColumn(name = "language_id")
     private Language language;
 
     @Column(name = "original_language_id")
@@ -52,7 +54,24 @@ public class Film {
     private String specialFeatures;
 
     @Column(name = "last_update")
-    private Timestamp timestamp;
+    private Timestamp lastUpdate;
+
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "film_category",
+            joinColumns = {@JoinColumn(name = "film_id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")}
+    )
+    private Set<Category> categories;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "film_actor",
+            joinColumns = {@JoinColumn(name = "film_id")},
+            inverseJoinColumns = {@JoinColumn(name = "actor_id")}
+    )
+    private Set<Actor> actors;
 
     public Long getFilmId() {
         return filmId;
@@ -86,12 +105,12 @@ public class Film {
         this.releaseYear = releaseYear;
     }
 
-    public Language getLanguageId() {
+    public Language getLanguage() {
         return language;
     }
 
-    public void setLanguageId(Language languageId) {
-        this.language = languageId;
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 
     public Long getOriginalLanguageId() {
@@ -150,24 +169,27 @@ public class Film {
         this.specialFeatures = specialFeatures;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getLastUpdate() {
+        return lastUpdate;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setLastUpdate(Timestamp lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Film)) return false;
-        Film film = (Film) o;
-        return Objects.equals(filmId, film.filmId) && Objects.equals(title, film.title) && Objects.equals(description, film.description) && Objects.equals(releaseYear, film.releaseYear) && Objects.equals(originalLanguageId, film.originalLanguageId) && Objects.equals(rentalDuration, film.rentalDuration) && Objects.equals(rentalRate, film.rentalRate) && Objects.equals(length, film.length) && Objects.equals(replacementCost, film.replacementCost) && Objects.equals(rating, film.rating) && Objects.equals(specialFeatures, film.specialFeatures) && Objects.equals(timestamp, film.timestamp);
+    public Set<Category> getCategories() {
+        return categories;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(filmId, title, description, releaseYear, originalLanguageId, rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, timestamp);
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+    public Set<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(Set<Actor> actors) {
+        this.actors = actors;
     }
 }
