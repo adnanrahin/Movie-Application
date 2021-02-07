@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="detail-section">
+      <div class="container-fluid">
+
+        <h3>{{movie.title}}</h3>
+
+        <div class="price">{{movie.rentalRate | currency:'USD'}}</div>
+
+        <hr>
+        <h4>Description</h4>
+        <p>{{movie.description}}</p>
+
+        <h4>Movie Details</h4>
+        <p>Movie Features: {{movie.specialFeatures}}</p>
+        <p>Language: {{movie.language.name}}</p>
+        <p>Rental Rate: {{movie.rentalRate | currency:'USD'}}</p>
+        <p>Length: {{movie.length}}</p>
+        <p>Replacement Cost: {{movie.replacementCost}}</p>
+        <p>Rental Duration: {{movie.rentalDuration}}</p>
+        <p>Last Update: {{movie.lastUpdate}}</p>
+
+        <h4>List of Actors: </h4>
+        <div *ngFor="let actor of movie.actors">
+          {{actor.firstName}} {{actor.lastName}}
+        </div>
+
+        <a routerLink="/movies" class="mt-5">Back To product List</a>
+
+      </div>
+    </div>
+  </div>
+</div>
