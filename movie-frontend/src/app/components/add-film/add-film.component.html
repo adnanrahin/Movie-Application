@@ -3,7 +3,43 @@
     <div class="detail-section">
       <div class="container-fluid">
 
-        <p>add-film works!</p>
+        <form [formGroup]="addFilmFormGroup" (ngSubmit)="onSubmit()">
+          <div formGroupName="film" class="form-area">
+            <div class="row">
+              <div class="col-md-2"><label>Title</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="title" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Description</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="description" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Expiration Year</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <select formControlName="releaseYear">
+                    <option *ngFor="let year of releaseYears" [ngValue]="year">{{year}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-info">Submit</button>
+          </div>
+
+        </form>
 
       </div>
     </div>

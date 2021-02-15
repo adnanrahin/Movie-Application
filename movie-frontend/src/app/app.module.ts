@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SearchComponent} from './components/search/search.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 import {AddFilmComponent} from './components/add-film/add-film.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
@@ -41,7 +42,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [ActorService],
   bootstrap: [AppComponent]
