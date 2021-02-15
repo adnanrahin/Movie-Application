@@ -2,6 +2,7 @@ package com.spring.boot.movie.app.controller;
 
 import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.services.FilmService;
+import com.spring.boot.movie.app.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,12 @@ import java.util.List;
 public class FilmController {
 
     private final FilmService filmService;
+    private final LanguageService languageService;
 
     @Autowired
-    public FilmController(FilmService filmService) {
+    public FilmController(FilmService filmService, LanguageService languageService) {
         this.filmService = filmService;
+        this.languageService = languageService;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllFilm")
@@ -27,8 +30,10 @@ public class FilmController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")
-    public ResponseEntity<?> saveFilm(@RequestBody Film object) {
-        return ResponseEntity.ok(filmService.save(object));
+    public ResponseEntity<?> saveFilm(@RequestBody Film film) {
+        film.setFilmId(0L);
+        languageService.save(film.getLanguage());
+        return ResponseEntity.ok(filmService.save(film));
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/search/{title}")
