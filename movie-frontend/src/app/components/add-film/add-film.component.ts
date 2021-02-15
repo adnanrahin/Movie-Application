@@ -31,7 +31,9 @@ export class AddFilmComponent implements OnInit {
         lastUpdate: ['']
       })
     });
-
+    this.movieFormService.getCreditCardYears().subscribe(data => {
+      this.releaseYears = data;
+    });
   }
 
   // tslint:disable-next-line:typedef
