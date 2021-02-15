@@ -1,6 +1,8 @@
 package com.spring.boot.movie.app.controller;
 
+import com.spring.boot.movie.app.model.Actor;
 import com.spring.boot.movie.app.model.Film;
+import com.spring.boot.movie.app.services.ActorService;
 import com.spring.boot.movie.app.services.FilmService;
 import com.spring.boot.movie.app.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @CrossOrigin(origins = "http://loalhost:4200")
@@ -17,11 +20,13 @@ public class FilmController {
 
     private final FilmService filmService;
     private final LanguageService languageService;
+    private final ActorService actorService;
 
     @Autowired
-    public FilmController(FilmService filmService, LanguageService languageService) {
+    public FilmController(FilmService filmService, LanguageService languageService, ActorService actorService) {
         this.filmService = filmService;
         this.languageService = languageService;
+        this.actorService = actorService;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllFilm")
@@ -33,6 +38,8 @@ public class FilmController {
     public ResponseEntity<?> saveFilm(@RequestBody Film film) {
         film.setFilmId(0L);
         languageService.save(film.getLanguage());
+        Set<Actor> actors = film.getActors();
+        actors.forEach(actorService::save);
         return ResponseEntity.ok(filmService.save(film));
     }
 
