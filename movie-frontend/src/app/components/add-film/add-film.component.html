@@ -35,6 +35,17 @@
             </div>
 
             <div class="row">
+              <div class="col-md-2"><label>Language</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <select formControlName="language">
+                    <option *ngFor="let language of languages" [ngValue]="language">{{language.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
               <div class="col-md-2"><label>Rental Duration</label></div>
               <div class="col-md-9">
                 <div class="input-space">
@@ -75,6 +86,17 @@
               <div class="col-md-9">
                 <div class="input-space">
                   <input formControlName="specialFeatures" type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Rating</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <select formControlName="rating">
+                    <option *ngFor="let name of enumKeys" [ngValue]="name">{{currentRating[name]}}</option>
+                  </select>
                 </div>
               </div>
             </div>
