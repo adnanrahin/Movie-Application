@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {MovieFormService} from '../../services/movie-form.service';
 import {Language} from '../../model/language';
+import {Movie} from '../../model/movie';
 
 @Component({
   selector: 'app-add-film',
@@ -11,6 +12,8 @@ import {Language} from '../../model/language';
 export class AddFilmComponent implements OnInit {
 
   addFilmFormGroup: FormGroup;
+
+  @Input() currentMovie: Movie;
 
   releaseYears: number[] = [];
   languages: Language[] = [];
@@ -33,8 +36,7 @@ export class AddFilmComponent implements OnInit {
         length: [''],
         replacementCost: [''],
         specialFeatures: [''],
-        rating: [''],
-        lastUpdate: ['']
+        rating: ['']
       })
     });
     this.movieFormService.getCreditCardYears().subscribe(data => {
@@ -48,6 +50,22 @@ export class AddFilmComponent implements OnInit {
   // tslint:disable-next-line:typedef
   onSubmit() {
     console.log('Handing the submit button');
-    console.log(this.addFilmFormGroup.get('film').value);
+    console.log(this.addFilmFormGroup.get('film.title').value);
+
+    this.currentMovie.title = this.addFilmFormGroup.get('film.title').value;
+    this.currentMovie.description = this.addFilmFormGroup.get('film.description').value;
+    this.currentMovie.releaseYear = this.addFilmFormGroup.get('film.releaseYear').value;
+    this.currentMovie.rentalDuration = this.addFilmFormGroup.get('film.rentalDuration').value;
+    this.currentMovie.length = this.addFilmFormGroup.get('film.length').value;
+    this.currentMovie.language = this.addFilmFormGroup.get('film.language').value;
+    this.currentMovie.rentalRate = this.addFilmFormGroup.get('film.rentalRate').value;
+    this.currentMovie.specialFeatures = this.addFilmFormGroup.get('film.specialFeatures').value;
+    this.currentMovie.replacementCost = this.addFilmFormGroup.get('film.replacementCost').value;
+    this.currentMovie.rating = this.addFilmFormGroup.get('film.rating').value;
+    this.currentMovie.actors = [];
+
+    this.movieFormService.addNewFilm(this.currentMovie).subscribe(response => {
+      console.log(response);
+    });
   }
 }

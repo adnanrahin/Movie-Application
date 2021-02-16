@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Language} from '../model/language';
+import {Movie} from '../model/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,10 @@ export class MovieFormService {
 
   public getAllLanguage(): Observable<Language[]> {
     return this.http.get<Language[]>(this.apiUrl + '/language/getAllLanguage');
+  }
+
+  public addNewFilm(movie: Movie): Observable<Movie> {
+    return this.http.post<Movie>(this.apiUrl + '/film/save', movie);
   }
 
 }
