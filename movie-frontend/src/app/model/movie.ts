@@ -12,7 +12,7 @@ export class Movie {
   rentalRate: number;
   length: number;
   replacementCost: number;
-  rating: string;
+  rating: Rating;
   specialFeatures: string;
   lastUpdate: Date;
   actors: Actor[];
@@ -21,8 +21,8 @@ export class Movie {
   // tslint:disable-next-line:max-line-length
   constructor(filmId: number, title: string, description: string, releaseYear: string,
               language: Language, originLanguageId: number, rentalDuration: number,
-              rentalRate: number, length: number, replacementCost: number, rating: string,
-              specialFeatures: string, lastUpdate: Date) {
+              rentalRate: number, length: number, replacementCost: number,
+              specialFeatures: string, lastUpdate: Date, rating: Rating, actors: Actor[]) {
     this.filmId = filmId;
     this.title = title;
     this.description = description;
@@ -36,9 +36,14 @@ export class Movie {
     this.rating = rating;
     this.specialFeatures = specialFeatures;
     this.lastUpdate = lastUpdate;
+    this.actors = actors;
   }
 
   getLastUpdateDate(): Date {
     return new Date(this.lastUpdate);
   }
+}
+// @ts-ignore
+export enum Rating {
+  G = 'G', PG = 'PG', R = 'R'
 }
