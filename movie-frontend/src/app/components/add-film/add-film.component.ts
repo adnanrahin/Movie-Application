@@ -14,6 +14,8 @@ export class AddFilmComponent implements OnInit {
 
   releaseYears: number[] = [];
   languages: Language[] = [];
+  ratings: any[] = [];
+
 
   constructor(private formBuilder: FormBuilder, private movieFormService: MovieFormService) {
   }
@@ -31,6 +33,7 @@ export class AddFilmComponent implements OnInit {
         length: [''],
         replacementCost: [''],
         specialFeatures: [''],
+        rating: [''],
         lastUpdate: ['']
       })
     });
