@@ -85,7 +85,11 @@
               <div class="col-md-2"><label>Special Features</label></div>
               <div class="col-md-9">
                 <div class="input-space">
-                  <input formControlName="specialFeatures" type="text">
+                  <div *ngFor="let feature of specialFeatures; let i=index">
+                      <input type="checkbox" formControlName="specialFeatures" [value]="feature"
+                             (change)="onCheckboxChange(feature, $event.target.checked)" />
+                      {{feature}}
+                  </div>
                 </div>
               </div>
             </div>

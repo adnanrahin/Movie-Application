@@ -34,4 +34,9 @@ export class MovieFormService {
     return this.http.post<Movie>(this.apiUrl + '/film/save', movie);
   }
 
+  public getAllSpecialFeatures(): Observable<any> {
+    const specialFeatures = ['Trailers', 'Commentaries', 'Deleted Scenes', 'Behind the Scenes'];
+    return of(specialFeatures);
+  }
+
 }
