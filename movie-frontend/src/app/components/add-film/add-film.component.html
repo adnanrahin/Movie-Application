@@ -85,10 +85,10 @@
               <div class="col-md-2"><label>Special Features</label></div>
               <div class="col-md-9">
                 <div class="input-space">
-                  <div *ngFor="let feature of specialFeatures; let i=index">
-                      <input type="checkbox" formControlName="specialFeatures" [value]="feature"
-                             (change)="onCheckboxChange(feature, $event.target.checked)" />
-                      {{feature}}
+                  <div *ngFor="let control of specialFeaturesArray.controls; let i=index">
+                    <input class="form-check-input" type="checkbox" [formControl]="control"
+                          (change)="getSelectedFeaturesValue()" id="inlineCheckbox{{i}}">
+                    <label class="form-check-label" for="inlineCheckbox{{i}}">{{features[i]}}</label>
                   </div>
                 </div>
               </div>

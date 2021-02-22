@@ -13,7 +13,7 @@ export class Movie {
   length: number;
   replacementCost: number;
   rating: Rating;
-  specialFeatures: string;
+  specialFeatures: string[];
   lastUpdate: Date;
   actors: Actor[];
 
@@ -22,7 +22,7 @@ export class Movie {
   constructor(filmId: number, title: string, description: string, releaseYear: string,
               language: Language, originLanguageId: number, rentalDuration: number,
               rentalRate: number, length: number, replacementCost: number,
-              specialFeatures: string, lastUpdate: Date, rating: Rating, actors: Actor[]) {
+              specialFeatures: string[], lastUpdate: Date, rating: Rating, actors: Actor[]) {
     this.filmId = filmId;
     this.title = title;
     this.description = description;
