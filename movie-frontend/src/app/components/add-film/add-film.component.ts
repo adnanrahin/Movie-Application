@@ -20,7 +20,7 @@ export class AddFilmComponent implements OnInit {
 
   currentRating = Rating;
   enumKeys = [];
-  features: Array<string> = ['Trailers', 'Commentaries', 'Deleted Scenes', 'Behind the Scenes'];
+  features = [];
   selectedFeatures = [];
 
 
@@ -30,6 +30,10 @@ export class AddFilmComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.movieFormService.getAllSpecialFeatures().subscribe(data => {
+      this.features = data;
+    });
 
     this.addFilmFormGroup = this.formBuilder.group({
       film: this.formBuilder.group({
@@ -52,18 +56,9 @@ export class AddFilmComponent implements OnInit {
     this.movieFormService.getAllLanguage().subscribe(data => {
       this.languages = data;
     });
-    /*this.movieFormService.getAllSpecialFeatures().subscribe(data => {
-      this.specialFeatures = data;
-    });*/
+
   }
 
-  // tslint:disable-next-line:typedef
-  addSpecialFeaturesControls() {
-    const arr = this.features.map(element => {
-      return this.formBuilder.control(false);
-    });
-    return this.formBuilder.array(arr);
-  }
 
   // tslint:disable-next-line:typedef
   onSubmit() {
@@ -103,6 +98,14 @@ export class AddFilmComponent implements OnInit {
     });
 
     console.log(this.selectedFeatures);
+  }
+
+  // tslint:disable-next-line:typedef
+  addSpecialFeaturesControls() {
+    const arr = this.features.map(element => {
+      return this.formBuilder.control(false);
+    });
+    return this.formBuilder.array(arr);
   }
 
 }
