@@ -78,7 +78,7 @@ export class AddFilmComponent implements OnInit {
       this.addFilmFormGroup.get('film.rentalDuration').value,
       this.addFilmFormGroup.get('film.rentalRate').value,
       this.addFilmFormGroup.get('film.length').value, this.addFilmFormGroup.get('film.replacementCost').value,
-      this.selectedFeatures, currentDate,
+      this.selectedFeatures.join(), currentDate,
       this.addFilmFormGroup.get('film.rating').value,
       []);
 
