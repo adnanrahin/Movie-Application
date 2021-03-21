@@ -13,6 +13,7 @@ import {SearchComponent} from './components/search/search.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 import {AddFilmComponent} from './components/add-film/add-film.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path: 'category/:id', component: MovieListComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
     MovieCategoryMenuComponent,
     SearchComponent,
     MovieDetailsComponent,
-    AddFilmComponent
+    AddFilmComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
