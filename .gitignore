@@ -18,6 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,3 +32,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+nohup.out
