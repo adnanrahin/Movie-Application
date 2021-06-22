@@ -5,6 +5,7 @@ services:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    container_name: sakila_db
     volumes:
       - ./mysql-dump:/docker-entrypoint-initdb.d
     environment:
