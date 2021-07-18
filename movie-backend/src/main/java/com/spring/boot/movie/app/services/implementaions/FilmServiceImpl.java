@@ -4,6 +4,9 @@ import com.spring.boot.movie.app.model.Film;
 import com.spring.boot.movie.app.repositories.FilmRepository;
 import com.spring.boot.movie.app.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +24,7 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
+    @Cacheable("findAll")
     public List<Film> findAll() {
         return filmRepository.findAll();
     }
@@ -31,6 +35,7 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
+    @CacheEvict(value = "film", allEntries = true)
     public Film save(Film object) {
         return filmRepository.save(object);
     }
@@ -46,6 +51,7 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
+    @Cacheable("findByTitleContaining")
     public List<Film> findByTitleContaining(@RequestParam("title") String title) {
         return filmRepository.findByTitleContaining(title);
     }
