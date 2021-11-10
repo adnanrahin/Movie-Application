@@ -1,4 +1,6 @@
-<h1> Movie Application </h1>
+<hld -t images_name . -> To create docker image from DockerFile
+docker run --name name_of_container -d -p hostIP:containerIP image_name
+1> Movie Application </h1>
 <h2>Frontend</h2>
 
 ### Install Angular CLI
@@ -44,5 +46,6 @@ Run ```mvn clean install -DskipTests```
 
 
 ### Spin up a docker container for test-db
-1. Run ```docker-compose up -d```
+1. cd ```docker-test-db```
+2. Run ```docker-compose up -d```
 
