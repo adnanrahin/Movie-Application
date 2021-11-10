@@ -36,7 +36,7 @@ the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 <h2> Backend </h2>
 
-### Change Directory go to: movie-backend 
+### Change Directory goes to: movie-backend 
 Run ```cd movie-backend``` in your cli or terminal
 
 ### Run pom.xml file inside
@@ -45,4 +45,4 @@ Run ```mvn clean install -DskipTests```
 
 ### Spin up a docker container for test-db
 1. Run ```docker-compose up -d```
-2. Run ```docker run --name sakila_db -d -p 3305:3306 -e MYSQL_ROOT_PASSWORD=root mysql```
+
