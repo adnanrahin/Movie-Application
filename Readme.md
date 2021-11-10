@@ -1,6 +1,3 @@
-<hld -t images_name . -> To create docker image from DockerFile
-docker run --name name_of_container -d -p hostIP:containerIP image_name
-1> Movie Application </h1>
 <h2>Frontend</h2>
 
 ### Install Angular CLI
