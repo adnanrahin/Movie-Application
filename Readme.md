@@ -41,3 +41,8 @@ Run ```cd movie-backend``` in your cli or terminal
 
 ### Run pom.xml file inside
 Run ```mvn clean install -DskipTests```
+
+
+### Spin up a docker container for test-db
+1. Run ```docker-compose up -d```
+2. Run ```docker run --name sakila_db -d -p 3305:3306 -e MYSQL_ROOT_PASSWORD=root mysql```
