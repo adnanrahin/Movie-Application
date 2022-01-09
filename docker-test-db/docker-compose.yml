@@ -12,4 +12,4 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: root
     ports:
-      - 3305:3306
+      - "3305:3306"
