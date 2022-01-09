@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql_db
+    links:
+      - mysql_db:app_db
+  mysql_db:
+    image: "mysql:8.0"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: sakila_db
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+    ports:
+      - "3305:3306"
