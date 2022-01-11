@@ -46,3 +46,5 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db2:3306/sakila?allowPublicKeyRetrieval=true&useSSL=false
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+    links:
+      - mysql-db2
