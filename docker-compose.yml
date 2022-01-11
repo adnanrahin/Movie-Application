@@ -1,37 +1,48 @@
-version: "3.8"
+version: '3.3'
 
 services:
-  mysqldb:
-    image: mysql
-    restart: unless-stopped
+  #service 1: definition of mysql database
+  db:
+    image: mysql:latest
     container_name: mysql-db2
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: root
     ports:
-      - '3306:3306'
-    volumes:
-      - ./mysql-dump:/docker-entrypoint-initdb.d
-  app:
-    depends_on:
-      - mysqldb
-    build: ./movie-backend
-    restart: on-failure
-    ports:
-      - '8080:8080'
-    environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.driver-class-name" : "com.mysql.cj.jdbc.Driver",
-        "spring.datasource.url"  : "jdbc:mysql://localhost:3306/sakila?allowPublicKeyRetrieval=true&useSSL=false",
-        "spring.datasource.username" : "root",
-        "spring.datasource.password" : "root",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
-    volumes:
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
+      - "3306:3306"
+    restart: always
 
-volumes:
-  db:
+
+  #service 2: definition of phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: my-php-myadmin
+    ports:
+      - "8082:80"
+    restart: always
+
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  #service 3: definition of your spring-boot app
+  customerservice: #it is just a name, which will be used only in this file.
+    image: customer-service               #name of the image after dockerfile executes
+    container_name: customer-service-app  #name of the container created from docker image
+    build:
+      context: .                          #docker file path (. means root directory)
+      dockerfile: Dockerfile              #docker file name
+    ports:
+      - "8084:8084"                       #docker containter port with your os port
+    restart: always
+
+    depends_on: #define dependencies of this app
+      - db                                #dependency name (which is defined with this name 'db' in this file earlier)
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db2:3306/sakila?allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
