@@ -4,7 +4,7 @@ services:
   #service 1: definition of mysql database
   db:
     image: mysql:latest
-    container_name: mysql-db2
+    container_name: sakila-db
     volumes:
       - ./mysql-dump:/docker-entrypoint-initdb.d
     environment:
@@ -29,9 +29,9 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
 
   #service 3: definition of your spring-boot app
-  customerservice: #it is just a name, which will be used only in this file.
-    image: customer-service               #name of the image after dockerfile executes
-    container_name: customer-service-app  #name of the container created from docker image
+  movieservice: #it is just a name, which will be used only in this file.
+    image: movie-service               #name of the image after dockerfile executes
+    container_name: movie-service-app  #name of the container created from docker image
     build:
       context: .                          #docker file path (. means root directory)
       dockerfile: Dockerfile              #docker file name
@@ -42,8 +42,8 @@ services:
     depends_on: #define dependencies of this app
       - db                                #dependency name (which is defined with this name 'db' in this file earlier)
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db2:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
+      SPRING_DATASOURCE_URL: jdbc:mysql://sakila-db:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     links:
-      - mysql-db2
+      - sakila-db
