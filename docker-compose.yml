@@ -31,7 +31,7 @@ services:
   #service 3: definition of your spring-boot app
   movieservice: #it is just a name, which will be used only in this file.
     image: movie-service               #name of the image after dockerfile executes
-    container_name: movie-service-app  #name of the container created from docker image
+    container_name: movie-service-app  
     build:
       context: .                          #docker file path (. means root directory)
       dockerfile: Dockerfile              #docker file name
