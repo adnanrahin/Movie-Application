@@ -45,5 +45,3 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://sakila-db:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-    links:
-      - sakila-db
