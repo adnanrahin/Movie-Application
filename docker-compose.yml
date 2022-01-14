@@ -12,8 +12,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: root
+      MYSQL_TCP_PORT: 3305
     ports:
-      - "3306:3306"
+      - "3305:3306"
+    expose:
+      - '3305'
     restart: always
 
 
@@ -44,6 +47,6 @@ services:
     depends_on: #define dependencies of this app
       - db                                #dependency name (which is defined with this name 'db' in this file earlier)
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://sakila-db:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
+      SPRING_DATASOURCE_URL: jdbc:mysql://sakila-db:3305/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
