@@ -19,7 +19,6 @@ services:
       - '3305'
     restart: always
 
-
   #service 2: definition of phpMyAdmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
