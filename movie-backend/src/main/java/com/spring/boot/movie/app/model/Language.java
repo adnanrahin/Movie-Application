@@ -3,6 +3,7 @@ package com.spring.boot.movie.app.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Set;
@@ -25,6 +26,12 @@ public class Language {
 
     @Column(name = "last_update")
     private Timestamp lastUpdate;
+
+    public Language(Long languageId, String name, Timestamp lastUpdate) {
+        this.languageId = languageId;
+        this.name = name;
+        this.lastUpdate = lastUpdate;
+    }
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "language",
