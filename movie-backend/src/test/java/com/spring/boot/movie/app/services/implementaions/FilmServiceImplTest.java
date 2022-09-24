@@ -47,6 +47,21 @@ class FilmServiceImplTest {
 
     @Test
     void findById() {
+
+        Film film = new Film();
+        film.setFilmId(1L);
+        film.setDescription("This is our film.");
+        film.setLanguage(new Language());
+        film.setActors(new HashSet<>());
+        film.setLastUpdate(new Timestamp(56266L));
+        film.setOriginalLanguageId(1L);
+        film.setTitle("Leader Ashche");
+
+        FilmServiceImpl filmService = mock(FilmServiceImpl.class);
+        when(filmService.findById(1L)).thenReturn(film);
+
+        assertEquals(film, filmService.findById(1L));
+
     }
 
     @Test
