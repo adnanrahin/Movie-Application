@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
@@ -36,7 +33,7 @@ class FilmServiceImplTest {
         film.setOriginalLanguageId(1L);
         film.setTitle("Leader Ashche");
 
-        List<Film> filmList = Arrays.asList(film);
+        List<Film> filmList = Collections.singletonList(film);
 
         FilmServiceImpl filmService = mock(FilmServiceImpl.class);
         when(filmService.findAll()).thenReturn(filmList);
