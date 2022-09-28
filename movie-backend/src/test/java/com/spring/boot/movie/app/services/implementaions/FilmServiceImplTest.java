@@ -64,27 +64,4 @@ class FilmServiceImplTest {
 
     }
 
-    @Test
-    void save() {
-    }
-
-    @Test
-    void delete() {
-    }
-
-    @Test
-    void deleteById() {
-    }
-
-    @Test
-    void findByTitleContaining() {
-    }
-
-    @Test
-    void findFilmByCategoryId() {
-    }
-
-    @Test
-    void findFilmByActorId() {
-    }
 }
