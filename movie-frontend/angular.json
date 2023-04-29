@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "movie-frontend"
+  "defaultProject": "movie-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
