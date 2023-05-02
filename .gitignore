@@ -36,3 +36,6 @@ build/
 
 nohup.out
 /movie-frontend/node
+
+container.log
+
