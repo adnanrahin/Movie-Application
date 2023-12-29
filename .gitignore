@@ -36,6 +36,7 @@ build/
 
 nohup.out
 /movie-frontend/node
+/movie-frontend/package-lock.json
 
 container.log
 
