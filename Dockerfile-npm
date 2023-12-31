@@ -1,0 +1,9 @@
+FROM node:12.18.4
+WORKDIR /app
+COPY package*.json ./
+RUN npm install npm@6.14.6
+RUN npm install -g @angular/cli@11.0.6
+RUN echo npm -v
+COPY movie-frontend/ .
+RUN npm run-script build
+CMD ["npm", "start"]
