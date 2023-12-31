@@ -6,4 +6,4 @@ RUN npm install -g @angular/cli@11.0.6
 RUN echo npm -v
 COPY movie-frontend/ .
 RUN npm run-script build
-CMD ["npm", "start"]
+CMD ["ng", "serve", "--host", "0.0.0.0"]
