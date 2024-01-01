@@ -12,11 +12,11 @@ import org.springframework.web.filter.CorsFilter;
 public class RestDataConfig {
 
     @Bean
-    @CrossOrigin(origins = "http://localhost:4200") // global @CrossOrigin
+    @CrossOrigin(origins = "*") // global @CrossOrigin
     public FilterRegistrationBean corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);

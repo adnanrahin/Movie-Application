@@ -40,7 +40,7 @@ services:
       context: .                          #docker file path (. means root directory)
       dockerfile: Dockerfile              #docker file name
     ports:
-      - "8080:8080"                       #docker containter port with your os port
+      - "0.0.0.0:8080:8080"                       #docker containter port with your os port
     restart: always
 
     depends_on: #define dependencies of this app
@@ -59,3 +59,4 @@ services:
     ports:
       - "4200:4200"
     restart: always
+    command: ["ng", "serve", "--host", "0.0.0.0"]

@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = "http://loalhost:4200")
 @RequestMapping("/api/film")
 public class FilmController {
 
