@@ -7,3 +7,7 @@
 6. This is start the UI in `http://localhost:4200`
 7. Now cd root directory of this project, where `docker-compose.yaml` file is.
 8. Now Run ```docker-compose up -d```, which will start the mysql database and spring-boot application.
+
+### Spun Up Entire Project In Docker Container
+1. Run `mvn clean install`
+2. Then `docker-compose up -d --build`
