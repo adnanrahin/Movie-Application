@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movieservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movieservice
+  template:
+    metadata:
+      labels:
+        app: movieservice
+    spec:
+      containers:
+        - name: movieservice-container
+          image: movie-service:latest
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-deployment:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movieservice-service
+spec:
+  selector:
+    app: movieservice
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
