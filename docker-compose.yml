@@ -3,10 +3,8 @@ version: '3.3'
 services:
   #service 1: definition of mysql database
   db:
-    image: mysql:latest
-    container_name: sakila-db
-    volumes:
-      - ./mysql-dump:/docker-entrypoint-initdb.d
+    image: sakila-docker-db:latest
+    container_name: sakila-docker-db
     cap_add:
       - SYS_NICE
     environment:
@@ -46,7 +44,7 @@ services:
     depends_on: #define dependencies of this app
       - db                                #dependency name (which is defined with this name 'db' in this file earlier)
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://sakila-db:3305/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
+      SPRING_DATASOURCE_URL: jdbc:mysql://sakila-docker-db:3305/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
 
