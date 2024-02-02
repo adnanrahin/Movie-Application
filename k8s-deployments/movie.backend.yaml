@@ -18,7 +18,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql-deployment:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
+              value: jdbc:mysql://sakila-db:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
             - name: SPRING_DATASOURCE_USERNAME
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
