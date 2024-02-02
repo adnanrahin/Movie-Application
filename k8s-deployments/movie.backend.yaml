@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: movieservice-deployment
+  name: movie-service-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: movieservice
+      app: movie-service
   template:
     metadata:
       labels:
-        app: movieservice
+        app: movie-service
     spec:
       containers:
-        - name: movieservice-container
+        - name: movie-service-container
           image: movie-service:latest
           env:
             - name: SPRING_DATASOURCE_URL
@@ -35,10 +35,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: movieservice-service
+  name: movie-service-service
 spec:
   selector:
-    app: movieservice
+    app: movie-service
   ports:
     - protocol: TCP
       port: 8080
