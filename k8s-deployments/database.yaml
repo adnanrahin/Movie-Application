@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: mysql-container
-          image: sakila-docker-db:latest
+          image: rahindev/sakila-docker-db:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: root

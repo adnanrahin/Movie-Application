@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: movie-frontend-container
-          image: movie-frontend:latest
+          image: rahindev/movie-frontend:latest
           ports:
             - containerPort: 4200
           readinessProbe:

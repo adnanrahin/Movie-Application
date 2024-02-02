@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: movie-service-container
-          image: movie-service:latest
+          image: rahindev/movie-service:latest
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://mysql-deployment:3306/sakila?user=root&password=root&useUnicode=true&characterEncoding=UTF-8
