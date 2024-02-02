@@ -5,6 +5,8 @@ services:
   db:
     image: sakila-docker-db:latest
     container_name: sakila-docker-db
+    build:
+      context: /docker-test-db/DockerFilemySqlDb
     cap_add:
       - SYS_NICE
     environment:
