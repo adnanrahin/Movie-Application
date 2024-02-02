@@ -6,7 +6,8 @@ services:
     image: sakila-docker-db:latest
     container_name: sakila-docker-db
     build:
-      context: /docker-test-db/DockerFilemySqlDb
+      context: .
+      dockerfile: DockerFileMySQLDb
     cap_add:
       - SYS_NICE
     environment:
@@ -18,19 +19,6 @@ services:
     expose:
       - '3305'
     restart: always
-
-  #service 2: definition of phpMyAdmin
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    container_name: my-php-myadmin
-    ports:
-      - "8082:80"
-    restart: always
-    depends_on:
-      - db
-    environment:
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
 
   #service 3: definition of your spring-boot app
   movieservice: #it is just a name, which will be used only in this file.
