@@ -15,6 +15,7 @@ spec:
       containers:
         - name: movie-frontend-container
           image: rahindev/movie-frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 4200
           readinessProbe:
