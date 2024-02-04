@@ -46,8 +46,7 @@ spec:
               value: root
             - name: MYSQL_DATABASE
               value: root
-            - name: MYSQL_TCP_PORT
-              value: "3305"
+
           ports:
             - containerPort: 3306
           volumeMounts:
@@ -57,3 +56,20 @@ spec:
         - name: mysql-data
           persistentVolumeClaim:
             claimName: mysql-pvc
+---
+# Define a 'Service' To Expose mysql to Other Services
+apiVersion: v1
+kind: Service
+metadata:
+  name: sakila-db  # DNS name
+  labels:
+    app: sakila-db
+    tier: database
+spec:
+  ports:
+    - port: 3306
+      targetPort: 3306
+  selector:       # mysql Pod Should contain same labels
+    app: mysql
+    tier: database
+  clusterIP: None  # We Use DNS, Thus ClusterIP is not relevant
