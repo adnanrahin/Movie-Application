@@ -36,8 +36,6 @@ spec:
     spec:
       containers:
         - image: rahindev/sakila-docker-db:latest # image from docker-hub
-          args:
-            - "--ignore-db-dir=lost+found" # Workaround for https://github.com/docker-library/mysql/issues/186
           name: sakila-db
           env:
             - name: MYSQL_ROOT_PASSWORD
