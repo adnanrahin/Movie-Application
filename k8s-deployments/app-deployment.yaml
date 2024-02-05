@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: springboot-k8s-mysql
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -19,29 +19,13 @@ spec:
             - containerPort: 8080
           env:   # Setting Enviornmental Variables
             - name: DB_HOST   # Setting Database host address from configMap
-              valueFrom :
-                configMapKeyRef :
-                  name : db-config
-                  key :  host
-
+              value: "sakila-db"
             - name: DB_NAME  # Setting Database name from configMap
-              valueFrom :
-                configMapKeyRef :
-                  name : db-config
-                  key :  dbName
-
+              value: "sakila"
             - name: DB_USERNAME  # Setting Database username from Secret
-              valueFrom :
-                secretKeyRef :
-                  name : mysql-secrets
-                  key :  username
-
+              value: "root"
             - name: DB_PASSWORD # Setting Database password from Secret
-              valueFrom :
-                secretKeyRef :
-                  name : mysql-secrets
-                  key :  password
-
+              value: "root"
 ---
 
 apiVersion: v1 # Kubernetes API version
