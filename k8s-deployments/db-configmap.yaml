@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: mysql-config-map
 data:
-  mysql-server: sakila-db    # The name of mysql service
-  mysql-database-name: sakila     # The name of the database used by the demo app
-  mysql-user-username: root
+  mysql-server: "sakila-db"    # The name of mysql service
+  mysql-database-name: "sakila"     # The name of the database used by the demo app
+  mysql-user-username: "root"
