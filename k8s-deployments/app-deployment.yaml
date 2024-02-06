@@ -1,42 +1,61 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-crud-deployment
+  name: demo-app-spring
+  labels:
+    app: demo-app-spring
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: springboot-k8s-mysql
-  replicas: 1
+      app: demo-app-spring
   template:
     metadata:
       labels:
-        app: springboot-k8s-mysql
+        app: demo-app-spring
     spec:
       containers:
-        - name: springboot-crud-k8s
+        - name: demo-app-spring
           image: rahindev/movie-service:latest
+          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
-          env:   # Setting Enviornmental Variables
-            - name: DB_HOST   # Setting Database host address from configMap
-              value: "sakila-db"
-            - name: DB_NAME  # Setting Database name from configMap
-              value: "sakila"
-            - name: DB_USERNAME  # Setting Database username from Secret
-              value: "root"
-            - name: DB_PASSWORD # Setting Database password from Secret
-              value: "root"
+            - name: http
+              containerPort: 8080
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-pass
+                  key: mysql-user-password
+            - name: DB_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  name:  mysql-config-map
+                  key: mysql-server
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name:  mysql-config-map
+                  key: mysql-database-name
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: mysql-user-username
 ---
-
-apiVersion: v1 # Kubernetes API version
-kind: Service # Kubernetes resource kind we are creating
-metadata: # Metadata of the resource kind we are creating
-  name: springboot-crud-svc
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-spring
+  labels:
+    app: demo-app-spring
 spec:
+  type: LoadBalancer
   selector:
-    app: springboot-k8s-mysql
+    app: demo-app-spring
   ports:
-    - protocol: "TCP"
-      port: 8080 # The port that the service is running on in the cluster
-      targetPort: 8080 # The port exposed by the service
-  type: NodePort # type of the service.
+    - protocol: TCP
+      name: http
+      port: 8080
+      targetPort: 8080
+      nodePort: 30000

@@ -1,75 +1,78 @@
 apiVersion: v1
-kind: PersistentVolume
+kind: Service
 metadata:
-  name: mysql-pv
+  name: demo-app-mysql
+  labels:
+    app: demo-app
 spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/sandbox/storage/data/kubernetes-storage/movie-database"
-
+  ports:
+    - port: 3306
+  selector:
+    app: demo-app
+    tier: mysql
+  clusterIP: None
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
+  labels:
+    app: demo-app
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sakila-db
+  name: demo-app-mysql
+  labels:
+    app: demo-app
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: mysql
+      app: demo-app
+      tier: mysql
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: mysql
+        app: demo-app
+        tier: mysql
     spec:
       containers:
-        - name: mysql-container
-          image: rahindev/sakila-docker-db:latest
-          imagePullPolicy: Always
+        - image: rahindev/sakila-db:latest
+          name: mysql
           env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: root
             - name: MYSQL_DATABASE
-              value: sakila
-
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: mysql-database-name
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-pass
+                  key: mysql-root-password
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-pass
+                  key: mysql-user-password
+          livenessProbe:
+            tcpSocket:
+              port: 3306
           ports:
             - containerPort: 3306
+              name: mysql
           volumeMounts:
-            - name: mysql-data
+            - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
       volumes:
-        - name: mysql-data
+        - name: mysql-persistent-storage
           persistentVolumeClaim:
             claimName: mysql-pvc
----
-# Define a 'Service' To Expose mysql to Other Services
-apiVersion: v1
-kind: Service
-metadata:
-  name: sakila-db  # DNS name
-  labels:
-    app: sakila-db
-    tier: database
-spec:
-  ports:
-    - port: 3306
-      targetPort: 3306
-  selector:       # mysql Pod Should contain same labels
-    app: mysql
-    tier: database
-  clusterIP: None  # We Use DNS, Thus ClusterIP is not relevant
