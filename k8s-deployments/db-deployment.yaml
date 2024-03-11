@@ -5,12 +5,13 @@ metadata:
   labels:
     app: sakila-db-app
 spec:
-  ports:
-    - port: 3306
+  type: ClusterIP
   selector:
     app: sakila-db-app
     tier: mysql
-  clusterIP: None
+  ports:
+    - port: 3306
+      targetPort: 3306
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
