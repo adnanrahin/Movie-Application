@@ -17,7 +17,7 @@ spec:
       containers:
         - name: demo-app-spring
           image: rahindev/movie-service:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080
@@ -28,14 +28,11 @@ spec:
                   name: mysql-pass
                   key: mysql-user-password
             - name: DB_SERVER
-              valueFrom:
-                configMapKeyRef:
-                  name:  mysql-config-map
-                  key: mysql-server
+              value: "sakila-db.movie-application.svc.cluster.local"
             - name: DB_NAME
               valueFrom:
                 configMapKeyRef:
-                  name:  mysql-config-map
+                  name: mysql-config-map
                   key: mysql-database-name
             - name: DB_USERNAME
               valueFrom:
