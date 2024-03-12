@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app-spring
+  name: movie-backend-service
   labels:
-    app: demo-app-spring
+    app: movie-backend-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-app-spring
+      app: movie-backend-service
   template:
     metadata:
       labels:
-        app: demo-app-spring
+        app: movie-backend-service
     spec:
       containers:
-        - name: demo-app-spring
+        - name: movie-backend-service
           image: rahindev/movie-service:latest
           imagePullPolicy: Always
           ports:
@@ -43,13 +43,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-app-spring
+  name: movie-backend-service
   labels:
-    app: demo-app-spring
+    app: movie-backend-service
 spec:
   type: LoadBalancer
   selector:
-    app: demo-app-spring
+    app: movie-backend-service
   ports:
     - protocol: TCP
       name: http
