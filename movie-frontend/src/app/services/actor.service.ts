@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class ActorService {
 
-  private readonly apiUrl: string = 'http://localhost:8080/api/actor';
+  private readonly apiUrl: string = 'movie-backend-service.movie-application.svc.cluster.local:8080/api/actor';
 
   constructor(private http: HttpClient) {
   }

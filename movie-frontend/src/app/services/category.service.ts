@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class CategoryService {
 
-  private readonly apiUrl: string = 'http://localhost:8080/api/category';
+  private readonly apiUrl: string = 'movie-backend-service.movie-application.svc.cluster.local:8080/api/category';
 
   constructor(private http: HttpClient) { }
 
