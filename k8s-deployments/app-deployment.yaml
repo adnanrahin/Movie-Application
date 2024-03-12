@@ -28,7 +28,10 @@ spec:
                   name: mysql-pass
                   key: mysql-user-password
             - name: DB_SERVER
-              value: "sakila-db.movie-application.svc.cluster.local"
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config-map
+                  key: mysql-server
             - name: DB_NAME
               valueFrom:
                 configMapKeyRef:
