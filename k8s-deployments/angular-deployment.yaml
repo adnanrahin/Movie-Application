@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: movie-frontend-deployment
+  namespace: movie-application
 spec:
   replicas: 1
   selector:

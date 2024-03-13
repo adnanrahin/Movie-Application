@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: movie-backend-service
+  namespace: movie-application
   labels:
     app: movie-backend-service
 spec:
