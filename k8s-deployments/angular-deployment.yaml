@@ -24,18 +24,3 @@ spec:
               port: 4200
             initialDelaySeconds: 5
             periodSeconds: 10
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: movie-frontend-service
-spec:
-  selector:
-    app: movie-frontend
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 4200
-      nodePort: 31420  # Specify the node port here
-  type: NodePort  # Change the type to NodePort
