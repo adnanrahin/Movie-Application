@@ -42,20 +42,3 @@ spec:
                 configMapKeyRef:
                   name: mysql-config-map
                   key: mysql-user-username
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: movie-backend-service
-  labels:
-    app: movie-backend-service
-spec:
-  type: LoadBalancer
-  selector:
-    app: movie-backend-service
-  ports:
-    - protocol: TCP
-      name: http
-      port: 8080
-      targetPort: 8080
-      nodePort: 30000
