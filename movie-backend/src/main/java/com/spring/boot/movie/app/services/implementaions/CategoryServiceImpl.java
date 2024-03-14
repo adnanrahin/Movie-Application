@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
+
+    private static final Logger logger = Logger.getLogger(CategoryServiceImpl.class.getName());
 
     private final CategoryRepository categoryRepository;
 
@@ -20,26 +24,63 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<Category> findAll() {
-        return (List<Category>) categoryRepository.findAll();
+        try {
+            List<Category> categories = (List<Category>) categoryRepository.findAll();
+            logger.info("Retrieved all categories successfully.");
+            return categories;
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error occurred while finding all categories: " + e.getMessage(), e);
+            throw e;
+        }
     }
 
     @Override
     public Category findById(Long id) {
-        return categoryRepository.findById(id).orElse(null);
+        try {
+            Category category = categoryRepository.findById(id).orElse(null);
+            if (category != null) {
+                logger.info("Retrieved category by id " + id + " successfully.");
+            } else {
+                logger.warning("No category found for id " + id);
+            }
+            return category;
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error occurred while finding category by id: " + id + ". " + e.getMessage(), e);
+            throw e;
+        }
     }
 
     @Override
     public Category save(Category object) {
-        return categoryRepository.save(object);
+        try {
+            Category savedCategory = categoryRepository.save(object);
+            logger.info("Saved category successfully: " + savedCategory);
+            return savedCategory;
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error occurred while saving category: " + object.toString() + ". " + e.getMessage(), e);
+            throw e;
+        }
     }
 
     @Override
     public void delete(Category object) {
-        categoryRepository.delete(object);
+        try {
+            categoryRepository.delete(object);
+            logger.info("Deleted category successfully: " + object);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error occurred while deleting category: " + object.toString() + ". " + e.getMessage(), e);
+            throw e;
+        }
     }
 
     @Override
     public void deleteById(Long id) {
-        categoryRepository.deleteById(id);
+        try {
+            categoryRepository.deleteById(id);
+            logger.info("Deleted category by id successfully: " + id);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error occurred while deleting category by id: " + id + ". " + e.getMessage(), e);
+            throw e;
+        }
     }
 }
