@@ -6,7 +6,7 @@ metadata:
   labels:
     app: movie-backend-service
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: movie-backend-service
