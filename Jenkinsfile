@@ -22,8 +22,9 @@ pipeline {
                  steps {
                      script {
                          sshagent(credentials: ['dev_server']) {
-                             def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application && mvn clean install"""
+                             def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application"""
                              sh "'${remoteCommand}'"
+                             sh 'mvn clean install'
                          }
                      }
                  }
