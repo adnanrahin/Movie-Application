@@ -18,16 +18,27 @@ pipeline {
                 }
             }
         }
-     stage('Build The Project') {
-                 steps {
-                     script {
-                         sshagent(credentials: ['dev_server']) {
-                             def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application"""
-                             sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
-                             sh 'mvn clean install'
-                         }
-                     }
-                 }
-             }
+        stage('Build The Project') {
+            steps {
+                script {
+                    sshagent(credentials: ['dev_server']) {
+                        def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application"""
+                        sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
+                        sh 'mvn clean install'
+                    }
+                }
+            }
+        }
+        stage('Deploy to k8s Pod') {
+            steps {
+                script {
+                    sshagent(credentials: ['dev_server']) {
+                        def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application/k8s-deployments"""
+                        sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
+                        sh 'kubectl apply -f .'
+                    }
+                }
+            }
+        }
     }
 }
