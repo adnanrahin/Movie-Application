@@ -23,7 +23,7 @@ pipeline {
                      script {
                          sshagent(credentials: ['dev_server']) {
                              def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application && mvn clean install"""
-                             sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
+                             sh "'${remoteCommand}'"
                          }
                      }
                  }
