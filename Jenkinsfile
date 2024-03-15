@@ -8,33 +8,25 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Git PULL') {
             steps {
                 script {
-                    // Display JDK and Maven versions
-                    sh 'java -version'
-                    sh 'mvn -version'
-
-                    // Run Maven clean install
-                    sh 'mvn clean install'
+                    sshagent(credentials: ['dev_server']) {
+                        def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application && git pull"""
+                        sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
+                    }
                 }
             }
         }
-        stage('Deploy To the Container') {
-                    steps {
-                        script {
-                            sh 'docker compose up -d --build'
-                        }
-                    }
-                }
-    }
-
-    post {
-        success {
-            echo 'Build successful!'
-        }
-        failure {
-            echo 'Build failed!'
-        }
+     stage('Build The Project') {
+                 steps {
+                     script {
+                         sshagent(credentials: ['dev_server']) {
+                             def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application && mvn clean install"""
+                             sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
+                         }
+                     }
+                 }
+             }
     }
 }
