@@ -35,7 +35,7 @@ pipeline {
                     sshagent(credentials: ['dev_server']) {
                         def remoteCommand = """cd /home/rahin/source-code/java/full-stack/Movie-Application/k8s-deployments"""
                         sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
-                        sh 'kubectl apply -f .'
+                        sh 'microk8s kubectl apply -f .'
                     }
                 }
             }
