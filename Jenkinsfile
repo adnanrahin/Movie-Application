@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     sshagent(credentials: ['dev_server']) {
-                        def remoteCommand = """cd ${movie_app_repo_path}  && git pull"""
+                        def remoteCommand = """git config --global --add safe.directory "*" && cd ${movie_app_repo_path}  && git pull"""
                         sh "ssh -o StrictHostKeyChecking=no ${server_user}@${dev_server} '${remoteCommand}'"
                     }
                 }
