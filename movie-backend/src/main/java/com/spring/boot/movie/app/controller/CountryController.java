@@ -21,7 +21,7 @@ public class CountryController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllCountry")
     public ResponseEntity<List<Country>> getAllCountry() {
-        return ResponseEntity.ok((List<Country>) countryService.findAll());
+        return ResponseEntity.ok(countryService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")

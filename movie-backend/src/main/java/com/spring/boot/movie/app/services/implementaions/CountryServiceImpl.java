@@ -25,7 +25,7 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public List<Country> findAll() {
         try {
-            List<Country> countries = (List<Country>) countryRepository.findAll();
+            List<Country> countries = countryRepository.findAll();
             logger.info("Retrieved all countries successfully.");
             return countries;
         } catch (Exception e) {

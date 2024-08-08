@@ -25,7 +25,7 @@ public class ActorServiceImpl implements ActorService {
     @Override
     public List<Actor> findAll() {
         try {
-            List<Actor> actors = (List<Actor>) actorRepository.findAll();
+            List<Actor> actors = actorRepository.findAll();
             logger.info("Retrieved all actors successfully.");
             return actors;
         } catch (Exception e) {

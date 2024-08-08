@@ -21,7 +21,7 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllCustomer")
     public ResponseEntity<List<Customer>> getAllCustomer() {
-        return ResponseEntity.ok((List<Customer>) customerService.findAll());
+        return ResponseEntity.ok(customerService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")

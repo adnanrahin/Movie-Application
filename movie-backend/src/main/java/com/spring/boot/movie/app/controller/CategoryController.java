@@ -21,7 +21,7 @@ public class CategoryController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllCategory")
     public ResponseEntity<List<Category>> getAllCategory() {
-        return ResponseEntity.ok((List<Category>) categoryService.findAll());
+        return ResponseEntity.ok(categoryService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")

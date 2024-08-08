@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<Customer> findAll() {
         try {
-            List<Customer> customers = (List<Customer>) customerRepository.findAll();
+            List<Customer> customers = customerRepository.findAll();
             logger.info("Retrieved all customers successfully.");
             return customers;
         } catch (Exception e) {

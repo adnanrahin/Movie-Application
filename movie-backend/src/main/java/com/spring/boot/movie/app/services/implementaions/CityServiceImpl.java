@@ -25,7 +25,7 @@ public class CityServiceImpl implements CityService {
     @Override
     public List<City> findAll() {
         try {
-            List<City> cities = (List<City>) cityRepository.findAll();
+            List<City> cities = cityRepository.findAll();
             logger.info("Retrieved all cities successfully.");
             return cities;
         } catch (Exception e) {

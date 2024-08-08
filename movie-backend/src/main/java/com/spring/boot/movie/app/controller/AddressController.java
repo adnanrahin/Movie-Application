@@ -21,7 +21,7 @@ public class AddressController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllAddress")
     public ResponseEntity<List<Address>> getAllAddress() {
-        return ResponseEntity.ok((List<Address>) addressService.findAll());
+        return ResponseEntity.ok(addressService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")

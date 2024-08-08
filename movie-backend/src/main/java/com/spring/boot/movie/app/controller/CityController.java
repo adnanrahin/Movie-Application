@@ -21,7 +21,7 @@ public class CityController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllCity")
     public ResponseEntity<List<City>> getAllCity() {
-        return ResponseEntity.ok((List<City>) cityService.findAll());
+        return ResponseEntity.ok(cityService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")

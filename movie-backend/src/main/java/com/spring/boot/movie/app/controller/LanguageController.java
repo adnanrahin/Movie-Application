@@ -21,7 +21,7 @@ public class LanguageController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getAllLanguage")
     public ResponseEntity<List<Language>> getAllLanguage() {
-        return ResponseEntity.ok((List<Language>) languageService.findAll());
+        return ResponseEntity.ok(languageService.findAll());
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/save")
