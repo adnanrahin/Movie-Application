@@ -137,7 +137,7 @@ spec:
             - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:mysql://mysql.movie-application.svc.cluster.local:3306/sakila?useSSL=false"
+              value: "jdbc:mysql://mysql.movie-application.svc.cluster.local:3306/sakila?allowPublicKeyRetrieval=true&useSSL=false"
             - name: SPRING_DATASOURCE_USERNAME
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
