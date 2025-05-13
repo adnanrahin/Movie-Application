@@ -62,7 +62,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql:5.7
+          image: rahindev/sakila-db:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -97,7 +97,7 @@ spec:
       targetPort: 3306
   selector:
     app: mysql
-  clusterIP: None  # headless service for stable DNS
+  clusterIP: None
 
 ---
 # Backend Deployment
