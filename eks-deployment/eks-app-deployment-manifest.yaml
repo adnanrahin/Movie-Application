@@ -132,7 +132,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: rahindev/movie-service:latest
+          image: rahindev/movie-backend:eks-1.0.1
           ports:
             - containerPort: 8080
           env:
