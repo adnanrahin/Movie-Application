@@ -40,7 +40,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: gp2
+  # storageClassName: gp2  # Omitted to use default storage class, or uncomment if gp2 works in your EKS
 
 ---
 # MySQL Deployment
