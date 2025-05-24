@@ -43,7 +43,7 @@ services:
     container_name: movie-frontend-prod
     build:
       context: .
-      dockerfile: Dockerfile-npm
+      dockerfile: Dockerfile-nginx
     ports:
       - "80:80"  # Changed from 4200 to 80 for production
     restart: always
