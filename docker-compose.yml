@@ -39,12 +39,13 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
 
   movie-frontend:
-    image: movie:frontend
-    container_name: movie-frontend
+    image: movie:frontend-prod
+    container_name: movie-frontend-prod
     build:
       context: .
-      dockerfile: Dockerfile-npm
+      dockerfile: Dockerfile-nginx
     ports:
-      - "4200:4200"
+      - "80:80"  # Changed from 4200 to 80 for production
     restart: always
-    command: ["ng", "serve", "--host", "0.0.0.0"]
+    depends_on:
+      - movieservice

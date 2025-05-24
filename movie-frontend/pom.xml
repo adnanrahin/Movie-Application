@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <parent>
     <groupId>com.spring.boot.movie.app</groupId>
     <artifactId>movie-app</artifactId>
@@ -10,54 +10,116 @@
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>movie-frontend</artifactId>
+  <packaging>jar</packaging>
 
   <build>
-
     <finalName>movie-frontend</finalName>
 
     <plugins>
+      <!-- Clean plugin to remove node_modules and dist -->
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${project.basedir}/node_modules</directory>
+            </fileset>
+            <fileset>
+              <directory>${project.basedir}/dist</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
 
+      <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.10.0</version>
-
+        <version>1.12.1</version>
+        <configuration>
+          <workingDirectory>${project.basedir}</workingDirectory>
+          <installDirectory>${project.build.directory}</installDirectory>
+          <skip>${skip.frontend.build}</skip>
+        </configuration>
         <executions>
-
           <execution>
-            <id>install node and npm</id>
+            <id>install-node-and-npm</id>
             <goals>
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v12.18.4</nodeVersion>
-              <npmVersion>6.14.6</npmVersion>
+              <nodeVersion>v16.20.2</nodeVersion>
+              <npmVersion>8.19.4</npmVersion>
+              <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
+              <npmDownloadRoot>https://registry.npmjs.org/npm/-/</npmDownloadRoot>
             </configuration>
           </execution>
 
           <execution>
-            <id>npm install</id>
+            <id>npm-install</id>
             <goals>
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>install</arguments>
+              <arguments>install --force --legacy-peer-deps</arguments>
+              <environmentVariables>
+                <CI>true</CI>
+              </environmentVariables>
             </configuration>
           </execution>
 
           <execution>
-            <id>npm run build</id>
+            <id>npm-build</id>
             <goals>
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>run build</arguments>
+              <arguments>run build -- --prod --aot --build-optimizer --output-path=dist/movie-frontend --delete-output-path</arguments>
+              <environmentVariables>
+                <NODE_ENV>production</NODE_ENV>
+                <NG_BUILD_ANALYZE>false</NG_BUILD_ANALYZE>
+                <BROWSERSLIST_DISABLE_CACHE>true</BROWSERSLIST_DISABLE_CACHE>
+                <NODE_OPTIONS>--max-old-space-size=4096</NODE_OPTIONS>
+              </environmentVariables>
             </configuration>
           </execution>
+        </executions>
+      </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/classes/static</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/dist/movie-frontend</directory>
+                  <filtering>false</filtering>
+                </resource>
+              </resources>
+              <failOnMissing>true</failOnMissing>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>skip-frontend</id>
+      <properties>
+        <skip.frontend.build>true</skip.frontend.build>
+      </properties>
+    </profile>
+  </profiles>
 </project>
