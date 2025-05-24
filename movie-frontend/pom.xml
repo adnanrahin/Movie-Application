@@ -20,13 +20,11 @@
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
         <version>1.12.1</version>
-
         <configuration>
           <workingDirectory>${project.basedir}</workingDirectory>
           <installDirectory>${project.build.directory}</installDirectory>
           <skip>${skip.frontend.build}</skip>
         </configuration>
-
         <executions>
           <execution>
             <id>install-node-and-npm</id>
@@ -36,11 +34,8 @@
             <configuration>
               <nodeVersion>v16.20.2</nodeVersion>
               <npmVersion>8.19.4</npmVersion>
-              <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
-              <npmDownloadRoot>https://registry.npmjs.org/npm/-/</npmDownloadRoot>
             </configuration>
           </execution>
-
           <execution>
             <id>npm-install</id>
             <goals>
@@ -48,23 +43,17 @@
             </goals>
             <configuration>
               <arguments>install --force --legacy-peer-deps</arguments>
-              <environmentVariables>
-                <CI>true</CI>
-              </environmentVariables>
             </configuration>
           </execution>
-
           <execution>
             <id>npm-build</id>
             <goals>
               <goal>npm</goal>
             </goals>
-            <phase>generate-resources</phase>
             <configuration>
-              <arguments>run build -- --output-path=dist/movie-frontend --delete-output-path</arguments>
+              <arguments>run build</arguments>
               <environmentVariables>
                 <NODE_ENV>production</NODE_ENV>
-                <NG_BUILD_ANALYZE>false</NG_BUILD_ANALYZE>
                 <BROWSERSLIST_DISABLE_CACHE>true</BROWSERSLIST_DISABLE_CACHE>
                 <NODE_OPTIONS>--max-old-space-size=4096</NODE_OPTIONS>
               </environmentVariables>
@@ -72,7 +61,6 @@
           </execution>
         </executions>
       </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -92,20 +80,10 @@
                   <filtering>false</filtering>
                 </resource>
               </resources>
-              <failOnMissing>true</failOnMissing>
             </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>skip-frontend</id>
-      <properties>
-        <skip.frontend.build>true</skip.frontend.build>
-      </properties>
-    </profile>
-  </profiles>
 </project>

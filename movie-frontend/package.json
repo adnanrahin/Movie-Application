@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build --prod --aot --build-optimizer --output-path=dist/movie-frontend --delete-output-path",
-    "build:dev": "ng build --output-path=dist/movie-frontend",
+    "build": "ng build --prod --aot --build-optimizer --output-path=dist/movie-frontend",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
