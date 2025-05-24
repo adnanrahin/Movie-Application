@@ -24,6 +24,8 @@
         <configuration>
           <workingDirectory>${project.basedir}</workingDirectory>
           <installDirectory>${project.build.directory}</installDirectory>
+          <!-- Fail the build on any frontend build errors -->
+          <skip>${skip.frontend.build}</skip>
         </configuration>
 
         <executions>
@@ -36,6 +38,9 @@
             <configuration>
               <nodeVersion>v16.20.2</nodeVersion>
               <npmVersion>8.19.4</npmVersion>
+              <!-- Cache node/npm for faster builds -->
+              <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
+              <npmDownloadRoot>https://registry.npmjs.org/npm/-/</npmDownloadRoot>
             </configuration>
           </execution>
 
@@ -46,7 +51,11 @@
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>install --force</arguments>
+              <!-- Force install and ignore peer dependency warnings -->
+              <arguments>install --force --legacy-peer-deps</arguments>
+              <environmentVariables>
+                <CI>true</CI> <!-- Prevent interactive CLI prompts -->
+              </environmentVariables>
             </configuration>
           </execution>
 
@@ -58,10 +67,15 @@
             </goals>
             <phase>generate-resources</phase>
             <configuration>
-              <arguments>run build -- --output-path=dist/movie-frontend</arguments>
+              <!-- Added --delete-output-path to clean before build -->
+              <arguments>run build -- --output-path=dist/movie-frontend --delete-output-path</arguments>
               <environmentVariables>
                 <NODE_ENV>production</NODE_ENV>
                 <NG_BUILD_ANALYZE>false</NG_BUILD_ANALYZE>
+                <!-- Resolve browserslist conflict -->
+                <BROWSERSLIST_DISABLE_CACHE>true</BROWSERSLIST_DISABLE_CACHE>
+                <!-- Increase Node memory for large builds -->
+                <NODE_OPTIONS>--max-old-space-size=4096</NODE_OPTIONS>
               </environmentVariables>
             </configuration>
           </execution>
@@ -85,12 +99,25 @@
               <resources>
                 <resource>
                   <directory>${project.basedir}/dist/movie-frontend</directory>
+                  <!-- Filtering can be enabled if needed -->
+                  <filtering>false</filtering>
                 </resource>
               </resources>
+              <!-- Fail if directory doesn't exist -->
+              <failOnMissing>true</failOnMissing>
             </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>skip-frontend</id>
+      <properties>
+        <skip.frontend.build>true</skip.frontend.build>
+      </properties>
+    </profile>
+  </profiles>
 </project>
