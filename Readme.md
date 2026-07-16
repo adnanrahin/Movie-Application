@@ -1,4 +1,4 @@
-### How to run In Docker Container
+### How to spun up container and run In Docker Container
 
 1. Comment Out k8s config section and uncomment the docker config section.
 2. This project uses node version 12.18.4 and npm version 6.14.6.
